@@ -1,42 +1,20 @@
 
-
-
-
 <!doctype html>
 <html lang="en" class="no-js">
   <head>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
-      <meta http-equiv="x-ua-compatible" content="ie=edge">
       
         <meta name="description" content="Arduino Command Line Interface">
       
       
-        <link rel="canonical" href="https://arduino.github.io/arduino-cli/rpc/commands/">
       
       
+        <link rel="canonical" href="https://arduino.github.io/arduino-cli/dev/rpc/commands/">
       
-        <meta name="lang:clipboard.copy" content="Copy to clipboard">
-      
-        <meta name="lang:clipboard.copied" content="Copied to clipboard">
-      
-        <meta name="lang:search.language" content="en">
-      
-        <meta name="lang:search.pipeline.stopwords" content="True">
-      
-        <meta name="lang:search.pipeline.trimmer" content="True">
-      
-        <meta name="lang:search.result.none" content="No matching documents">
-      
-        <meta name="lang:search.result.one" content="1 matching document">
-      
-        <meta name="lang:search.result.other" content="# matching documents">
-      
-        <meta name="lang:search.tokenizer" content="[\s\-]+">
-      
-      <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-4.6.3">
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
     
     
       
@@ -44,104 +22,119 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
-      
-        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
-      
+      <link rel="stylesheet" href="../../assets/stylesheets/main.a57b2b03.min.css">
       
         
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
         
-        <meta name="theme-color" content="#009688">
+          
+          
+          <meta name="theme-color" content="#009485">
+        
       
     
     
-      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
-    
     
       
-        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
-        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
       
     
-    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
     
-    
-      <link rel="stylesheet" href="../../css/version-select.css">
     
     
       
+
+
     
     
   </head>
   
-    
-    
-    <body dir="ltr" data-md-color-primary="teal" data-md-color-accent="orange">
   
-    <svg class="md-svg">
-      <defs>
-        
-        
-          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
-        
-      </defs>
-    </svg>
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="teal" data-md-color-accent="orange">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
-    
-      <a href="#protocol-documentation" tabindex="0" class="md-skip">
-        Skip to content
-      </a>
-    
-    
-      <header class="md-header" data-md-component="header">
-  <nav class="md-header-nav md-grid">
-    <div class="md-flex">
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="https://arduino.github.io/arduino-cli/" title="Arduino CLI" aria-label="Arduino CLI" class="md-header-nav__button md-logo">
-          
-            <img alt="logo" src="../../img/icon_mac_light.png" width="24" height="24">
-          
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#protocol-documentation" class="md-skip">
+          Skip to content
         </a>
-      </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
-      </div>
-      <div class="md-flex__cell md-flex__cell--stretch">
-        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          
-            <span class="md-header-nav__topic">
-              Arduino CLI
-            </span>
-            <span class="md-header-nav__topic">
-              
-                commands
-              
-            </span>
-          
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Arduino CLI" class="md-header__button md-logo" aria-label="Arduino CLI" data-md-component="logo">
+      
+  <img src="../../img/icon_mac_light.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Arduino CLI
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              commands
+            
+          </span>
         </div>
       </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        
-          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-          
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
-      <label class="md-icon md-search__icon" for="__search"></label>
-      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
-        &#xE5CD;
-      </button>
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="result">
+        <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            Type to start searching
+            Initializing search
           </div>
           <ol class="md-search-result__list"></ol>
         </div>
@@ -149,71 +142,60 @@
     </div>
   </div>
 </div>
+    
+    
+      <div class="md-header__source">
         
-      </div>
-      
-        <div class="md-flex__cell md-flex__cell--shrink">
-          <div class="md-header-nav__source">
-            
-
-
-  
-
-<a href="https://github.com/arduino/arduino-cli" title="Go to repository" class="md-source" data-md-source="github">
-  
-    <div class="md-source__icon">
-      <svg viewBox="0 0 24 24" width="24" height="24">
-        <use xlink:href="#__github" width="24" height="24"></use>
-      </svg>
-    </div>
-  
+<a href="https://github.com/arduino/arduino-cli" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
   <div class="md-source__repository">
     arduino/arduino-cli
   </div>
 </a>
-          </div>
-        </div>
-      
-    </div>
+      </div>
+    
   </nav>
+  
 </header>
     
-    <div class="md-container">
+    <div class="md-container" data-md-component="container">
+      
       
         
+          
+        
       
-      
-      <main class="md-main" role="main">
-        <div class="md-main__inner md-grid" data-md-component="container">
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
           
             
-              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
-                    <nav class="md-nav md-nav--primary" data-md-level="0">
-  <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="https://arduino.github.io/arduino-cli/" title="Arduino CLI" class="md-nav__button md-logo">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Arduino CLI" class="md-nav__button md-logo" aria-label="Arduino CLI" data-md-component="logo">
       
-        <img alt="logo" src="../../img/icon_mac_light.png" width="48" height="48">
-      
+  <img src="../../img/icon_mac_light.png" alt="logo">
+
     </a>
     Arduino CLI
   </label>
   
     <div class="md-nav__source">
       
-
-
-  
-
-<a href="https://github.com/arduino/arduino-cli" title="Go to repository" class="md-source" data-md-source="github">
-  
-    <div class="md-source__icon">
-      <svg viewBox="0 0 24 24" width="24" height="24">
-        <use xlink:href="#__github" width="24" height="24"></use>
-      </svg>
-    </div>
-  
+<a href="https://github.com/arduino/arduino-cli" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
   <div class="md-source__repository">
     arduino/arduino-cli
   </div>
@@ -226,660 +208,15 @@
       
       
 
-
-  <li class="md-nav__item">
-    <a href="../.." title="Documentation Home" class="md-nav__link">
-      Documentation Home
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../installation/" title="Installation" class="md-nav__link">
-      Installation
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../UPGRADING/" title="Upgrading" class="md-nav__link">
-      Upgrading
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../getting-started/" title="Getting started" class="md-nav__link">
-      Getting started
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../command-line-completion/" title="Command line completion" class="md-nav__link">
-      Command line completion
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../CONTRIBUTING/" title="How to contribute" class="md-nav__link">
-      How to contribute
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../FAQ/" title="FAQ" class="md-nav__link">
-      FAQ
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
-    
-    <label class="md-nav__link" for="nav-8">
-      Command reference
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-8">
-        Command reference
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../commands/arduino-cli/" title="arduino-cli" class="md-nav__link">
-      arduino-cli
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../commands/arduino-cli_board/" title="board" class="md-nav__link">
-      board
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../commands/arduino-cli_board_attach/" title="board attach" class="md-nav__link">
-      board attach
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../commands/arduino-cli_board_details/" title="board details" class="md-nav__link">
-      board details
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../commands/arduino-cli_board_list/" title="board list" class="md-nav__link">
-      board list
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../commands/arduino-cli_board_listall/" title="board listall" class="md-nav__link">
-      board listall
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../commands/arduino-cli_burn-bootloader/" title="burn-bootloader" class="md-nav__link">
-      burn-bootloader
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../commands/arduino-cli_cache/" title="cache" class="md-nav__link">
-      cache
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../commands/arduino-cli_cache_clean/" title="cache clean" class="md-nav__link">
-      cache clean
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../commands/arduino-cli_compile/" title="compile" class="md-nav__link">
-      compile
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../commands/arduino-cli_completion/" title="completion" class="md-nav__link">
-      completion
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../commands/arduino-cli_config/" title="config" class="md-nav__link">
-      config
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../commands/arduino-cli_config_dump/" title="config dump" class="md-nav__link">
-      config dump
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../commands/arduino-cli_config_init/" title="config init" class="md-nav__link">
-      config init
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../commands/arduino-cli_config_add/" title="config add" class="md-nav__link">
-      config add
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../commands/arduino-cli_config_delete/" title="config delete" class="md-nav__link">
-      config delete
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../commands/arduino-cli_config_remove/" title="config remove" class="md-nav__link">
-      config remove
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../commands/arduino-cli_config_set/" title="config set" class="md-nav__link">
-      config set
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../commands/arduino-cli_core/" title="core" class="md-nav__link">
-      core
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../commands/arduino-cli_core_download/" title="core download" class="md-nav__link">
-      core download
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../commands/arduino-cli_core_install/" title="core install" class="md-nav__link">
-      core install
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../commands/arduino-cli_core_list/" title="core list" class="md-nav__link">
-      core list
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../commands/arduino-cli_core_search/" title="core search" class="md-nav__link">
-      core search
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../commands/arduino-cli_core_uninstall/" title="core uninstall" class="md-nav__link">
-      core uninstall
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../commands/arduino-cli_core_update-index/" title="core update-index" class="md-nav__link">
-      core update-index
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../commands/arduino-cli_core_upgrade/" title="core upgrade" class="md-nav__link">
-      core upgrade
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../commands/arduino-cli_daemon/" title="daemon" class="md-nav__link">
-      daemon
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../commands/arduino-cli_debug/" title="debug" class="md-nav__link">
-      debug
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../commands/arduino-cli_lib/" title="lib" class="md-nav__link">
-      lib
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../commands/arduino-cli_lib_deps/" title="lib deps" class="md-nav__link">
-      lib deps
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../commands/arduino-cli_lib_download/" title="lib download" class="md-nav__link">
-      lib download
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../commands/arduino-cli_lib_examples/" title="lib examples" class="md-nav__link">
-      lib examples
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../commands/arduino-cli_lib_install/" title="lib install" class="md-nav__link">
-      lib install
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../commands/arduino-cli_lib_list/" title="lib list" class="md-nav__link">
-      lib list
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../commands/arduino-cli_lib_search/" title="lib search" class="md-nav__link">
-      lib search
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../commands/arduino-cli_lib_uninstall/" title="lib uninstall" class="md-nav__link">
-      lib uninstall
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../commands/arduino-cli_lib_update-index/" title="lib update-index" class="md-nav__link">
-      lib update-index
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../commands/arduino-cli_lib_upgrade/" title="lib upgrade" class="md-nav__link">
-      lib upgrade
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../commands/arduino-cli_outdated/" title="outdated" class="md-nav__link">
-      outdated
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../commands/arduino-cli_sketch/" title="sketch" class="md-nav__link">
-      sketch
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../commands/arduino-cli_sketch_archive/" title="sketch archive" class="md-nav__link">
-      sketch archive
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../commands/arduino-cli_sketch_new/" title="sketch new" class="md-nav__link">
-      sketch new
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../commands/arduino-cli_update/" title="update" class="md-nav__link">
-      update
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../commands/arduino-cli_upgrade/" title="upgrade" class="md-nav__link">
-      upgrade
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../commands/arduino-cli_upload/" title="upload" class="md-nav__link">
-      upload
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../commands/arduino-cli_version/" title="version" class="md-nav__link">
-      version
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
 
     
       
@@ -887,53 +224,866 @@
       
 
   
-
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9" checked>
-    
-    <label class="md-nav__link" for="nav-9">
-      gRPC reference
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-9">
-        gRPC reference
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/" class="md-nav__link">
+        Installation
+      </a>
+    </li>
   
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
       
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UPGRADING/" class="md-nav__link">
+        Upgrading
+      </a>
+    </li>
+  
+
     
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/" class="md-nav__link">
+        Getting started
+      </a>
+    </li>
+  
+
     
-      <label class="md-nav__link md-nav__link--active" for="__toc">
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../command-line-completion/" class="md-nav__link">
+        Command line completion
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CONTRIBUTING/" class="md-nav__link">
+        How to contribute
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FAQ/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          Command reference
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Command reference" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Command reference
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/arduino-cli/" class="md-nav__link">
+        arduino-cli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/arduino-cli_board/" class="md-nav__link">
+        board
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/arduino-cli_board_attach/" class="md-nav__link">
+        board attach
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/arduino-cli_board_details/" class="md-nav__link">
+        board details
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/arduino-cli_board_list/" class="md-nav__link">
+        board list
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/arduino-cli_board_listall/" class="md-nav__link">
+        board listall
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/arduino-cli_board_search/" class="md-nav__link">
+        board search
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/arduino-cli_burn-bootloader/" class="md-nav__link">
+        burn-bootloader
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/arduino-cli_cache/" class="md-nav__link">
+        cache
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/arduino-cli_cache_clean/" class="md-nav__link">
+        cache clean
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/arduino-cli_compile/" class="md-nav__link">
+        compile
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/arduino-cli_completion/" class="md-nav__link">
+        completion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/arduino-cli_config/" class="md-nav__link">
+        config
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/arduino-cli_config_dump/" class="md-nav__link">
+        config dump
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/arduino-cli_config_init/" class="md-nav__link">
+        config init
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/arduino-cli_config_add/" class="md-nav__link">
+        config add
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/arduino-cli_config_delete/" class="md-nav__link">
+        config delete
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/arduino-cli_config_remove/" class="md-nav__link">
+        config remove
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/arduino-cli_config_set/" class="md-nav__link">
+        config set
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/arduino-cli_core/" class="md-nav__link">
+        core
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/arduino-cli_core_download/" class="md-nav__link">
+        core download
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/arduino-cli_core_install/" class="md-nav__link">
+        core install
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/arduino-cli_core_list/" class="md-nav__link">
+        core list
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/arduino-cli_core_search/" class="md-nav__link">
+        core search
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/arduino-cli_core_uninstall/" class="md-nav__link">
+        core uninstall
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/arduino-cli_core_update-index/" class="md-nav__link">
+        core update-index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/arduino-cli_core_upgrade/" class="md-nav__link">
+        core upgrade
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/arduino-cli_daemon/" class="md-nav__link">
+        daemon
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/arduino-cli_debug/" class="md-nav__link">
+        debug
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/arduino-cli_lib/" class="md-nav__link">
+        lib
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/arduino-cli_lib_deps/" class="md-nav__link">
+        lib deps
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/arduino-cli_lib_download/" class="md-nav__link">
+        lib download
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/arduino-cli_lib_examples/" class="md-nav__link">
+        lib examples
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/arduino-cli_lib_install/" class="md-nav__link">
+        lib install
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/arduino-cli_lib_list/" class="md-nav__link">
+        lib list
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/arduino-cli_lib_search/" class="md-nav__link">
+        lib search
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/arduino-cli_lib_uninstall/" class="md-nav__link">
+        lib uninstall
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/arduino-cli_lib_update-index/" class="md-nav__link">
+        lib update-index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/arduino-cli_lib_upgrade/" class="md-nav__link">
+        lib upgrade
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/arduino-cli_monitor/" class="md-nav__link">
+        monitor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/arduino-cli_outdated/" class="md-nav__link">
+        outdated
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/arduino-cli_sketch/" class="md-nav__link">
+        sketch
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/arduino-cli_sketch_archive/" class="md-nav__link">
+        sketch archive
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/arduino-cli_sketch_new/" class="md-nav__link">
+        sketch new
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/arduino-cli_update/" class="md-nav__link">
+        update
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/arduino-cli_upgrade/" class="md-nav__link">
+        upgrade
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/arduino-cli_upload/" class="md-nav__link">
+        upload
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/arduino-cli_version/" class="md-nav__link">
+        version
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9">
+          gRPC reference
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="gRPC reference" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          gRPC reference
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          commands
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         commands
-      </label>
-    
-    <a href="./" title="commands" class="md-nav__link md-nav__link--active">
-      commands
-    </a>
-    
+      </a>
       
-<nav class="md-nav md-nav--secondary">
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
   
   
     
   
   
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
   <a href="#table-of-contents" class="md-nav__link">
@@ -947,7 +1097,7 @@
     cc/arduino/cli/commands/v1/board.proto
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="cc/arduino/cli/commands/v1/board.proto">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -974,6 +1124,20 @@
           <li class="md-nav__item">
   <a href="#boarddetailsresponse" class="md-nav__link">
     BoardDetailsResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boardidentificationproperties" class="md-nav__link">
+    BoardIdentificationProperties
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boardidentificationpropertiespropertiesentry" class="md-nav__link">
+    BoardIdentificationProperties.PropertiesEntry
   </a>
   
 </li>
@@ -1077,13 +1241,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#identificationpref" class="md-nav__link">
-    IdentificationPref
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#package" class="md-nav__link">
     Package
   </a>
@@ -1104,13 +1261,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#usbid" class="md-nav__link">
-    USBID
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -1121,7 +1271,7 @@
     cc/arduino/cli/commands/v1/commands.proto
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="cc/arduino/cli/commands/v1/commands.proto">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1134,6 +1284,20 @@
           <li class="md-nav__item">
   <a href="#archivesketchresponse" class="md-nav__link">
     ArchiveSketchResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#createrequest" class="md-nav__link">
+    CreateRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#createresponse" class="md-nav__link">
+    CreateResponse
   </a>
   
 </li>
@@ -1153,6 +1317,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#downloadresult" class="md-nav__link">
+    DownloadResult
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#initrequest" class="md-nav__link">
     InitRequest
   </a>
@@ -1162,6 +1333,13 @@
           <li class="md-nav__item">
   <a href="#initresponse" class="md-nav__link">
     InitResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#initresponseprogress" class="md-nav__link">
+    InitResponse.Progress
   </a>
   
 </li>
@@ -1181,6 +1359,20 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#newsketchrequest" class="md-nav__link">
+    NewSketchRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#newsketchresponse" class="md-nav__link">
+    NewSketchResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#outdatedrequest" class="md-nav__link">
     OutdatedRequest
   </a>
@@ -1190,20 +1382,6 @@
           <li class="md-nav__item">
   <a href="#outdatedresponse" class="md-nav__link">
     OutdatedResponse
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#rescanrequest" class="md-nav__link">
-    RescanRequest
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#rescanresponse" class="md-nav__link">
-    RescanResponse
   </a>
   
 </li>
@@ -1302,7 +1480,7 @@
     cc/arduino/cli/commands/v1/common.proto
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="cc/arduino/cli/commands/v1/common.proto">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1320,6 +1498,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#installedplatformreference" class="md-nav__link">
+    InstalledPlatformReference
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#instance" class="md-nav__link">
     Instance
   </a>
@@ -1329,6 +1514,13 @@
           <li class="md-nav__item">
   <a href="#platform" class="md-nav__link">
     Platform
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#profile" class="md-nav__link">
+    Profile
   </a>
   
 </li>
@@ -1357,7 +1549,7 @@
     cc/arduino/cli/commands/v1/compile.proto
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="cc/arduino/cli/commands/v1/compile.proto">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1398,8 +1590,15 @@
     cc/arduino/cli/commands/v1/core.proto
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="cc/arduino/cli/commands/v1/core.proto">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alreadyatlatestversionerror" class="md-nav__link">
+    AlreadyAtLatestVersionError
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#platformdownloadrequest" class="md-nav__link">
@@ -1495,7 +1694,7 @@
     cc/arduino/cli/commands/v1/lib.proto
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="cc/arduino/cli/commands/v1/lib.proto">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1667,6 +1866,20 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#libraryupgraderequest" class="md-nav__link">
+    LibraryUpgradeRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#libraryupgraderesponse" class="md-nav__link">
+    LibraryUpgradeResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#searchedlibrary" class="md-nav__link">
     SearchedLibrary
   </a>
@@ -1690,6 +1903,13 @@
           <li class="md-nav__item">
   <a href="#ziplibraryinstallresponse" class="md-nav__link">
     ZipLibraryInstallResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#libraryinstalllocation" class="md-nav__link">
+    LibraryInstallLocation
   </a>
   
 </li>
@@ -1721,16 +1941,112 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#ccarduinoclicommandsv1monitorproto" class="md-nav__link">
+    cc/arduino/cli/commands/v1/monitor.proto
+  </a>
+  
+    <nav class="md-nav" aria-label="cc/arduino/cli/commands/v1/monitor.proto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enumeratemonitorportsettingsrequest" class="md-nav__link">
+    EnumerateMonitorPortSettingsRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enumeratemonitorportsettingsresponse" class="md-nav__link">
+    EnumerateMonitorPortSettingsResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitorportconfiguration" class="md-nav__link">
+    MonitorPortConfiguration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitorportsetting" class="md-nav__link">
+    MonitorPortSetting
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitorportsettingdescriptor" class="md-nav__link">
+    MonitorPortSettingDescriptor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitorrequest" class="md-nav__link">
+    MonitorRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitorresponse" class="md-nav__link">
+    MonitorResponse
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ccarduinoclicommandsv1portproto" class="md-nav__link">
+    cc/arduino/cli/commands/v1/port.proto
+  </a>
+  
+    <nav class="md-nav" aria-label="cc/arduino/cli/commands/v1/port.proto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#port" class="md-nav__link">
+    Port
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#portpropertiesentry" class="md-nav__link">
+    Port.PropertiesEntry
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#ccarduinoclicommandsv1uploadproto" class="md-nav__link">
     cc/arduino/cli/commands/v1/upload.proto
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="cc/arduino/cli/commands/v1/upload.proto">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#burnbootloaderrequest" class="md-nav__link">
     BurnBootloaderRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#burnbootloaderrequestuserfieldsentry" class="md-nav__link">
+    BurnBootloaderRequest.UserFieldsEntry
   </a>
   
 </li>
@@ -1757,8 +2073,36 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#programmerisrequiredforuploaderror" class="md-nav__link">
+    ProgrammerIsRequiredForUploadError
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supporteduserfieldsrequest" class="md-nav__link">
+    SupportedUserFieldsRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supporteduserfieldsresponse" class="md-nav__link">
+    SupportedUserFieldsResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#uploadrequest" class="md-nav__link">
     UploadRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uploadrequestuserfieldsentry" class="md-nav__link">
+    UploadRequest.UserFieldsEntry
   </a>
   
 </li>
@@ -1778,8 +2122,22 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#uploadusingprogrammerrequestuserfieldsentry" class="md-nav__link">
+    UploadUsingProgrammerRequest.UserFieldsEntry
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#uploadusingprogrammerresponse" class="md-nav__link">
     UploadUsingProgrammerResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#userfield" class="md-nav__link">
+    UserField
   </a>
   
 </li>
@@ -1796,140 +2154,245 @@
   
 </li>
       
-      
-      
-      
-      
     </ul>
   
 </nav>
-    
-  </li>
+      
+    </li>
+  
 
-        
+            
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../settings/" class="md-nav__link">
+        settings
+      </a>
+    </li>
+  
+
+            
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../debug/" class="md-nav__link">
+        debug
+      </a>
+    </li>
+  
+
+            
           
-
-
-  <li class="md-nav__item">
-    <a href="../monitor/" title="monitor" class="md-nav__link">
-      monitor
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../settings/" title="settings" class="md-nav__link">
-      settings
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../debug/" title="debug" class="md-nav__link">
-      debug
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
+        </ul>
+      </nav>
+    </li>
+  
 
     
       
       
       
 
-
-  <li class="md-nav__item">
-    <a href="../../configuration/" title="Configuration" class="md-nav__link">
-      Configuration
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../integration-options/" title="Integration options" class="md-nav__link">
-      Integration options
-    </a>
-  </li>
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/" class="md-nav__link">
+        Configuration
+      </a>
+    </li>
+  
 
     
       
       
       
 
-
-  <li class="md-nav__item">
-    <a href="../../sketch-build-process/" title="Sketch build process" class="md-nav__link">
-      Sketch build process
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../sketch-specification/" title="Sketch specification" class="md-nav__link">
-      Sketch specification
-    </a>
-  </li>
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integration-options/" class="md-nav__link">
+        Integration options
+      </a>
+    </li>
+  
 
     
       
       
       
 
-
-  <li class="md-nav__item">
-    <a href="../../library-specification/" title="Library specification" class="md-nav__link">
-      Library specification
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../platform-specification/" title="Platform specification" class="md-nav__link">
-      Platform specification
-    </a>
-  </li>
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sketch-build-process/" class="md-nav__link">
+        Sketch build process
+      </a>
+    </li>
+  
 
     
       
       
       
 
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sketch-specification/" class="md-nav__link">
+        Sketch specification
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item">
-    <a href="../../package_index_json-specification/" title="Package index specification" class="md-nav__link">
-      Package index specification
-    </a>
-  </li>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sketch-project-file/" class="md-nav__link">
+        Sketch project file
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../library-specification/" class="md-nav__link">
+        Library specification
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platform-specification/" class="md-nav__link">
+        Platform specification
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pluggable-discovery-specification/" class="md-nav__link">
+        Pluggable discovery specification
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pluggable-monitor-specification/" class="md-nav__link">
+        Pluggable monitor specification
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../package_index_json-specification/" class="md-nav__link">
+        Package index specification
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_20" type="checkbox" id="__nav_20" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_20">
+          Guides
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Guides" data-md-level="1">
+        <label class="md-nav__title" for="__nav_20">
+          <span class="md-nav__icon md-icon"></span>
+          Guides
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/secure-boot/" class="md-nav__link">
+        Secure boot
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
 
     
   </ul>
@@ -1939,18 +2402,25 @@
               </div>
             
             
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
-<nav class="md-nav md-nav--secondary">
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
   
   
     
   
   
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
   <a href="#table-of-contents" class="md-nav__link">
@@ -1964,7 +2434,7 @@
     cc/arduino/cli/commands/v1/board.proto
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="cc/arduino/cli/commands/v1/board.proto">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1991,6 +2461,20 @@
           <li class="md-nav__item">
   <a href="#boarddetailsresponse" class="md-nav__link">
     BoardDetailsResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boardidentificationproperties" class="md-nav__link">
+    BoardIdentificationProperties
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boardidentificationpropertiespropertiesentry" class="md-nav__link">
+    BoardIdentificationProperties.PropertiesEntry
   </a>
   
 </li>
@@ -2094,13 +2578,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#identificationpref" class="md-nav__link">
-    IdentificationPref
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#package" class="md-nav__link">
     Package
   </a>
@@ -2121,13 +2598,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#usbid" class="md-nav__link">
-    USBID
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -2138,7 +2608,7 @@
     cc/arduino/cli/commands/v1/commands.proto
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="cc/arduino/cli/commands/v1/commands.proto">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2151,6 +2621,20 @@
           <li class="md-nav__item">
   <a href="#archivesketchresponse" class="md-nav__link">
     ArchiveSketchResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#createrequest" class="md-nav__link">
+    CreateRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#createresponse" class="md-nav__link">
+    CreateResponse
   </a>
   
 </li>
@@ -2170,6 +2654,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#downloadresult" class="md-nav__link">
+    DownloadResult
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#initrequest" class="md-nav__link">
     InitRequest
   </a>
@@ -2179,6 +2670,13 @@
           <li class="md-nav__item">
   <a href="#initresponse" class="md-nav__link">
     InitResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#initresponseprogress" class="md-nav__link">
+    InitResponse.Progress
   </a>
   
 </li>
@@ -2198,6 +2696,20 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#newsketchrequest" class="md-nav__link">
+    NewSketchRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#newsketchresponse" class="md-nav__link">
+    NewSketchResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#outdatedrequest" class="md-nav__link">
     OutdatedRequest
   </a>
@@ -2207,20 +2719,6 @@
           <li class="md-nav__item">
   <a href="#outdatedresponse" class="md-nav__link">
     OutdatedResponse
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#rescanrequest" class="md-nav__link">
-    RescanRequest
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#rescanresponse" class="md-nav__link">
-    RescanResponse
   </a>
   
 </li>
@@ -2319,7 +2817,7 @@
     cc/arduino/cli/commands/v1/common.proto
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="cc/arduino/cli/commands/v1/common.proto">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2337,6 +2835,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#installedplatformreference" class="md-nav__link">
+    InstalledPlatformReference
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#instance" class="md-nav__link">
     Instance
   </a>
@@ -2346,6 +2851,13 @@
           <li class="md-nav__item">
   <a href="#platform" class="md-nav__link">
     Platform
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#profile" class="md-nav__link">
+    Profile
   </a>
   
 </li>
@@ -2374,7 +2886,7 @@
     cc/arduino/cli/commands/v1/compile.proto
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="cc/arduino/cli/commands/v1/compile.proto">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2415,8 +2927,15 @@
     cc/arduino/cli/commands/v1/core.proto
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="cc/arduino/cli/commands/v1/core.proto">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alreadyatlatestversionerror" class="md-nav__link">
+    AlreadyAtLatestVersionError
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#platformdownloadrequest" class="md-nav__link">
@@ -2512,7 +3031,7 @@
     cc/arduino/cli/commands/v1/lib.proto
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="cc/arduino/cli/commands/v1/lib.proto">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2684,6 +3203,20 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#libraryupgraderequest" class="md-nav__link">
+    LibraryUpgradeRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#libraryupgraderesponse" class="md-nav__link">
+    LibraryUpgradeResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#searchedlibrary" class="md-nav__link">
     SearchedLibrary
   </a>
@@ -2707,6 +3240,13 @@
           <li class="md-nav__item">
   <a href="#ziplibraryinstallresponse" class="md-nav__link">
     ZipLibraryInstallResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#libraryinstalllocation" class="md-nav__link">
+    LibraryInstallLocation
   </a>
   
 </li>
@@ -2738,16 +3278,112 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#ccarduinoclicommandsv1monitorproto" class="md-nav__link">
+    cc/arduino/cli/commands/v1/monitor.proto
+  </a>
+  
+    <nav class="md-nav" aria-label="cc/arduino/cli/commands/v1/monitor.proto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enumeratemonitorportsettingsrequest" class="md-nav__link">
+    EnumerateMonitorPortSettingsRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enumeratemonitorportsettingsresponse" class="md-nav__link">
+    EnumerateMonitorPortSettingsResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitorportconfiguration" class="md-nav__link">
+    MonitorPortConfiguration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitorportsetting" class="md-nav__link">
+    MonitorPortSetting
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitorportsettingdescriptor" class="md-nav__link">
+    MonitorPortSettingDescriptor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitorrequest" class="md-nav__link">
+    MonitorRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitorresponse" class="md-nav__link">
+    MonitorResponse
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ccarduinoclicommandsv1portproto" class="md-nav__link">
+    cc/arduino/cli/commands/v1/port.proto
+  </a>
+  
+    <nav class="md-nav" aria-label="cc/arduino/cli/commands/v1/port.proto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#port" class="md-nav__link">
+    Port
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#portpropertiesentry" class="md-nav__link">
+    Port.PropertiesEntry
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#ccarduinoclicommandsv1uploadproto" class="md-nav__link">
     cc/arduino/cli/commands/v1/upload.proto
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="cc/arduino/cli/commands/v1/upload.proto">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#burnbootloaderrequest" class="md-nav__link">
     BurnBootloaderRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#burnbootloaderrequestuserfieldsentry" class="md-nav__link">
+    BurnBootloaderRequest.UserFieldsEntry
   </a>
   
 </li>
@@ -2774,8 +3410,36 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#programmerisrequiredforuploaderror" class="md-nav__link">
+    ProgrammerIsRequiredForUploadError
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supporteduserfieldsrequest" class="md-nav__link">
+    SupportedUserFieldsRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supporteduserfieldsresponse" class="md-nav__link">
+    SupportedUserFieldsResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#uploadrequest" class="md-nav__link">
     UploadRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uploadrequestuserfieldsentry" class="md-nav__link">
+    UploadRequest.UserFieldsEntry
   </a>
   
 </li>
@@ -2795,8 +3459,22 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#uploadusingprogrammerrequestuserfieldsentry" class="md-nav__link">
+    UploadUsingProgrammerRequest.UserFieldsEntry
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#uploadusingprogrammerresponse" class="md-nav__link">
     UploadUsingProgrammerResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#userfield" class="md-nav__link">
+    UserField
   </a>
   
 </li>
@@ -2813,10 +3491,6 @@
   
 </li>
       
-      
-      
-      
-      
     </ul>
   
 </nav>
@@ -2825,22 +3499,26 @@
               </div>
             
           
-          <div class="md-content">
+          <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
+                
+                  <a href="https://github.com/arduino/arduino-cli/blob/master/docs/rpc/commands.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
                 
                 
                 <h1 id="protocol-documentation">Protocol Documentation<a class="headerlink" href="#protocol-documentation" title="Permanent link">&para;</a></h1>
 <p><a name="top"></a></p>
 <h2 id="table-of-contents">Table of Contents<a class="headerlink" href="#table-of-contents" title="Permanent link">&para;</a></h2>
 <ul>
-<li>
-<p><a href="#cc/arduino/cli/commands/v1/board.proto">cc/arduino/cli/commands/v1/board.proto</a></p>
-<ul>
+<li><a href="#cc/arduino/cli/commands/v1/board.proto">cc/arduino/cli/commands/v1/board.proto</a><ul>
 <li><a href="#cc.arduino.cli.commands.v1.BoardAttachRequest">BoardAttachRequest</a></li>
 <li><a href="#cc.arduino.cli.commands.v1.BoardAttachResponse">BoardAttachResponse</a></li>
 <li><a href="#cc.arduino.cli.commands.v1.BoardDetailsRequest">BoardDetailsRequest</a></li>
 <li><a href="#cc.arduino.cli.commands.v1.BoardDetailsResponse">BoardDetailsResponse</a></li>
+<li><a href="#cc.arduino.cli.commands.v1.BoardIdentificationProperties">BoardIdentificationProperties</a></li>
+<li><a href="#cc.arduino.cli.commands.v1.BoardIdentificationProperties.PropertiesEntry">BoardIdentificationProperties.PropertiesEntry</a></li>
 <li><a href="#cc.arduino.cli.commands.v1.BoardListAllRequest">BoardListAllRequest</a></li>
 <li><a href="#cc.arduino.cli.commands.v1.BoardListAllResponse">BoardListAllResponse</a></li>
 <li><a href="#cc.arduino.cli.commands.v1.BoardListItem">BoardListItem</a></li>
@@ -2855,30 +3533,30 @@
 <li><a href="#cc.arduino.cli.commands.v1.ConfigValue">ConfigValue</a></li>
 <li><a href="#cc.arduino.cli.commands.v1.DetectedPort">DetectedPort</a></li>
 <li><a href="#cc.arduino.cli.commands.v1.Help">Help</a></li>
-<li><a href="#cc.arduino.cli.commands.v1.IdentificationPref">IdentificationPref</a></li>
 <li><a href="#cc.arduino.cli.commands.v1.Package">Package</a></li>
 <li><a href="#cc.arduino.cli.commands.v1.Systems">Systems</a></li>
 <li><a href="#cc.arduino.cli.commands.v1.ToolsDependencies">ToolsDependencies</a></li>
-<li><a href="#cc.arduino.cli.commands.v1.USBID">USBID</a></li>
 </ul>
 </li>
-</ul>
-<ul>
 <li>
 <p><a href="#cc/arduino/cli/commands/v1/commands.proto">cc/arduino/cli/commands/v1/commands.proto</a></p>
 <ul>
 <li><a href="#cc.arduino.cli.commands.v1.ArchiveSketchRequest">ArchiveSketchRequest</a></li>
 <li><a href="#cc.arduino.cli.commands.v1.ArchiveSketchResponse">ArchiveSketchResponse</a></li>
+<li><a href="#cc.arduino.cli.commands.v1.CreateRequest">CreateRequest</a></li>
+<li><a href="#cc.arduino.cli.commands.v1.CreateResponse">CreateResponse</a></li>
 <li><a href="#cc.arduino.cli.commands.v1.DestroyRequest">DestroyRequest</a></li>
 <li><a href="#cc.arduino.cli.commands.v1.DestroyResponse">DestroyResponse</a></li>
+<li><a href="#cc.arduino.cli.commands.v1.DownloadResult">DownloadResult</a></li>
 <li><a href="#cc.arduino.cli.commands.v1.InitRequest">InitRequest</a></li>
 <li><a href="#cc.arduino.cli.commands.v1.InitResponse">InitResponse</a></li>
+<li><a href="#cc.arduino.cli.commands.v1.InitResponse.Progress">InitResponse.Progress</a></li>
 <li><a href="#cc.arduino.cli.commands.v1.LoadSketchRequest">LoadSketchRequest</a></li>
 <li><a href="#cc.arduino.cli.commands.v1.LoadSketchResponse">LoadSketchResponse</a></li>
+<li><a href="#cc.arduino.cli.commands.v1.NewSketchRequest">NewSketchRequest</a></li>
+<li><a href="#cc.arduino.cli.commands.v1.NewSketchResponse">NewSketchResponse</a></li>
 <li><a href="#cc.arduino.cli.commands.v1.OutdatedRequest">OutdatedRequest</a></li>
 <li><a href="#cc.arduino.cli.commands.v1.OutdatedResponse">OutdatedResponse</a></li>
-<li><a href="#cc.arduino.cli.commands.v1.RescanRequest">RescanRequest</a></li>
-<li><a href="#cc.arduino.cli.commands.v1.RescanResponse">RescanResponse</a></li>
 <li><a href="#cc.arduino.cli.commands.v1.UpdateCoreLibrariesIndexRequest">UpdateCoreLibrariesIndexRequest</a></li>
 <li><a href="#cc.arduino.cli.commands.v1.UpdateCoreLibrariesIndexResponse">UpdateCoreLibrariesIndexResponse</a></li>
 <li><a href="#cc.arduino.cli.commands.v1.UpdateIndexRequest">UpdateIndexRequest</a></li>
@@ -2896,33 +3574,26 @@
 </li>
 </ul>
 <ul>
-<li>
-<p><a href="#cc/arduino/cli/commands/v1/common.proto">cc/arduino/cli/commands/v1/common.proto</a></p>
-<ul>
+<li><a href="#cc/arduino/cli/commands/v1/common.proto">cc/arduino/cli/commands/v1/common.proto</a><ul>
 <li><a href="#cc.arduino.cli.commands.v1.Board">Board</a></li>
 <li><a href="#cc.arduino.cli.commands.v1.DownloadProgress">DownloadProgress</a></li>
+<li><a href="#cc.arduino.cli.commands.v1.InstalledPlatformReference">InstalledPlatformReference</a></li>
 <li><a href="#cc.arduino.cli.commands.v1.Instance">Instance</a></li>
 <li><a href="#cc.arduino.cli.commands.v1.Platform">Platform</a></li>
+<li><a href="#cc.arduino.cli.commands.v1.Profile">Profile</a></li>
 <li><a href="#cc.arduino.cli.commands.v1.Programmer">Programmer</a></li>
 <li><a href="#cc.arduino.cli.commands.v1.TaskProgress">TaskProgress</a></li>
 </ul>
 </li>
-</ul>
-<ul>
-<li>
-<p><a href="#cc/arduino/cli/commands/v1/compile.proto">cc/arduino/cli/commands/v1/compile.proto</a></p>
-<ul>
+<li><a href="#cc/arduino/cli/commands/v1/compile.proto">cc/arduino/cli/commands/v1/compile.proto</a><ul>
 <li><a href="#cc.arduino.cli.commands.v1.CompileRequest">CompileRequest</a></li>
 <li><a href="#cc.arduino.cli.commands.v1.CompileRequest.SourceOverrideEntry">CompileRequest.SourceOverrideEntry</a></li>
 <li><a href="#cc.arduino.cli.commands.v1.CompileResponse">CompileResponse</a></li>
 <li><a href="#cc.arduino.cli.commands.v1.ExecutableSectionSize">ExecutableSectionSize</a></li>
 </ul>
 </li>
-</ul>
-<ul>
-<li>
-<p><a href="#cc/arduino/cli/commands/v1/core.proto">cc/arduino/cli/commands/v1/core.proto</a></p>
-<ul>
+<li><a href="#cc/arduino/cli/commands/v1/core.proto">cc/arduino/cli/commands/v1/core.proto</a><ul>
+<li><a href="#cc.arduino.cli.commands.v1.AlreadyAtLatestVersionError">AlreadyAtLatestVersionError</a></li>
 <li><a href="#cc.arduino.cli.commands.v1.PlatformDownloadRequest">PlatformDownloadRequest</a></li>
 <li><a href="#cc.arduino.cli.commands.v1.PlatformDownloadResponse">PlatformDownloadResponse</a></li>
 <li><a href="#cc.arduino.cli.commands.v1.PlatformInstallRequest">PlatformInstallRequest</a></li>
@@ -2937,8 +3608,6 @@
 <li><a href="#cc.arduino.cli.commands.v1.PlatformUpgradeResponse">PlatformUpgradeResponse</a></li>
 </ul>
 </li>
-</ul>
-<ul>
 <li>
 <p><a href="#cc/arduino/cli/commands/v1/lib.proto">cc/arduino/cli/commands/v1/lib.proto</a></p>
 <ul>
@@ -2966,12 +3635,15 @@
 <li><a href="#cc.arduino.cli.commands.v1.LibraryUninstallResponse">LibraryUninstallResponse</a></li>
 <li><a href="#cc.arduino.cli.commands.v1.LibraryUpgradeAllRequest">LibraryUpgradeAllRequest</a></li>
 <li><a href="#cc.arduino.cli.commands.v1.LibraryUpgradeAllResponse">LibraryUpgradeAllResponse</a></li>
+<li><a href="#cc.arduino.cli.commands.v1.LibraryUpgradeRequest">LibraryUpgradeRequest</a></li>
+<li><a href="#cc.arduino.cli.commands.v1.LibraryUpgradeResponse">LibraryUpgradeResponse</a></li>
 <li><a href="#cc.arduino.cli.commands.v1.SearchedLibrary">SearchedLibrary</a></li>
 <li><a href="#cc.arduino.cli.commands.v1.SearchedLibrary.ReleasesEntry">SearchedLibrary.ReleasesEntry</a></li>
 <li><a href="#cc.arduino.cli.commands.v1.ZipLibraryInstallRequest">ZipLibraryInstallRequest</a></li>
 <li><a href="#cc.arduino.cli.commands.v1.ZipLibraryInstallResponse">ZipLibraryInstallResponse</a></li>
 </ul>
 <ul>
+<li><a href="#cc.arduino.cli.commands.v1.LibraryInstallLocation">LibraryInstallLocation</a></li>
 <li><a href="#cc.arduino.cli.commands.v1.LibraryLayout">LibraryLayout</a></li>
 <li><a href="#cc.arduino.cli.commands.v1.LibraryLocation">LibraryLocation</a></li>
 <li><a href="#cc.arduino.cli.commands.v1.LibrarySearchStatus">LibrarySearchStatus</a></li>
@@ -2979,21 +3651,39 @@
 </li>
 </ul>
 <ul>
-<li>
-<p><a href="#cc/arduino/cli/commands/v1/upload.proto">cc/arduino/cli/commands/v1/upload.proto</a></p>
-<ul>
+<li><a href="#cc/arduino/cli/commands/v1/monitor.proto">cc/arduino/cli/commands/v1/monitor.proto</a><ul>
+<li><a href="#cc.arduino.cli.commands.v1.EnumerateMonitorPortSettingsRequest">EnumerateMonitorPortSettingsRequest</a></li>
+<li><a href="#cc.arduino.cli.commands.v1.EnumerateMonitorPortSettingsResponse">EnumerateMonitorPortSettingsResponse</a></li>
+<li><a href="#cc.arduino.cli.commands.v1.MonitorPortConfiguration">MonitorPortConfiguration</a></li>
+<li><a href="#cc.arduino.cli.commands.v1.MonitorPortSetting">MonitorPortSetting</a></li>
+<li><a href="#cc.arduino.cli.commands.v1.MonitorPortSettingDescriptor">MonitorPortSettingDescriptor</a></li>
+<li><a href="#cc.arduino.cli.commands.v1.MonitorRequest">MonitorRequest</a></li>
+<li><a href="#cc.arduino.cli.commands.v1.MonitorResponse">MonitorResponse</a></li>
+</ul>
+</li>
+<li><a href="#cc/arduino/cli/commands/v1/port.proto">cc/arduino/cli/commands/v1/port.proto</a><ul>
+<li><a href="#cc.arduino.cli.commands.v1.Port">Port</a></li>
+<li><a href="#cc.arduino.cli.commands.v1.Port.PropertiesEntry">Port.PropertiesEntry</a></li>
+</ul>
+</li>
+<li><a href="#cc/arduino/cli/commands/v1/upload.proto">cc/arduino/cli/commands/v1/upload.proto</a><ul>
 <li><a href="#cc.arduino.cli.commands.v1.BurnBootloaderRequest">BurnBootloaderRequest</a></li>
+<li><a href="#cc.arduino.cli.commands.v1.BurnBootloaderRequest.UserFieldsEntry">BurnBootloaderRequest.UserFieldsEntry</a></li>
 <li><a href="#cc.arduino.cli.commands.v1.BurnBootloaderResponse">BurnBootloaderResponse</a></li>
 <li><a href="#cc.arduino.cli.commands.v1.ListProgrammersAvailableForUploadRequest">ListProgrammersAvailableForUploadRequest</a></li>
 <li><a href="#cc.arduino.cli.commands.v1.ListProgrammersAvailableForUploadResponse">ListProgrammersAvailableForUploadResponse</a></li>
+<li><a href="#cc.arduino.cli.commands.v1.ProgrammerIsRequiredForUploadError">ProgrammerIsRequiredForUploadError</a></li>
+<li><a href="#cc.arduino.cli.commands.v1.SupportedUserFieldsRequest">SupportedUserFieldsRequest</a></li>
+<li><a href="#cc.arduino.cli.commands.v1.SupportedUserFieldsResponse">SupportedUserFieldsResponse</a></li>
 <li><a href="#cc.arduino.cli.commands.v1.UploadRequest">UploadRequest</a></li>
+<li><a href="#cc.arduino.cli.commands.v1.UploadRequest.UserFieldsEntry">UploadRequest.UserFieldsEntry</a></li>
 <li><a href="#cc.arduino.cli.commands.v1.UploadResponse">UploadResponse</a></li>
 <li><a href="#cc.arduino.cli.commands.v1.UploadUsingProgrammerRequest">UploadUsingProgrammerRequest</a></li>
+<li><a href="#cc.arduino.cli.commands.v1.UploadUsingProgrammerRequest.UserFieldsEntry">UploadUsingProgrammerRequest.UserFieldsEntry</a></li>
 <li><a href="#cc.arduino.cli.commands.v1.UploadUsingProgrammerResponse">UploadUsingProgrammerResponse</a></li>
+<li><a href="#cc.arduino.cli.commands.v1.UserField">UserField</a></li>
 </ul>
 </li>
-</ul>
-<ul>
 <li><a href="#scalar-value-types">Scalar Value Types</a></li>
 </ul>
 <p><a name="cc/arduino/cli/commands/v1/board.proto"></a></p>
@@ -3130,7 +3820,7 @@
 <td>official</td>
 <td><a href="#bool">bool</a></td>
 <td></td>
-<td>Whether this is an official or 3<sup>rd</sup> party board.</td>
+<td>Whether this is an official or 3rd party board.</td>
 </tr>
 <tr>
 <td>pinout</td>
@@ -3163,12 +3853,6 @@
 <td>The board&#39;s custom configuration options.</td>
 </tr>
 <tr>
-<td>identification_prefs</td>
-<td><a href="#cc.arduino.cli.commands.v1.IdentificationPref">IdentificationPref</a></td>
-<td>repeated</td>
-<td>Identifying information for the board (e.g., USB VID/PID).</td>
-</tr>
-<tr>
 <td>programmers</td>
 <td><a href="#cc.arduino.cli.commands.v1.Programmer">Programmer</a></td>
 <td>repeated</td>
@@ -3179,6 +3863,58 @@
 <td><a href="#bool">bool</a></td>
 <td></td>
 <td>Set to true if the board supports debugging</td>
+</tr>
+<tr>
+<td>identification_properties</td>
+<td><a href="#cc.arduino.cli.commands.v1.BoardIdentificationProperties">BoardIdentificationProperties</a></td>
+<td>repeated</td>
+<td>Identifying information for the board (e.g., USB VID/PID).</td>
+</tr>
+</tbody>
+</table>
+<p><a name="cc.arduino.cli.commands.v1.BoardIdentificationProperties"></a></p>
+<h3 id="boardidentificationproperties">BoardIdentificationProperties<a class="headerlink" href="#boardidentificationproperties" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>properties</td>
+<td><a href="#cc.arduino.cli.commands.v1.BoardIdentificationProperties.PropertiesEntry">BoardIdentificationProperties.PropertiesEntry</a></td>
+<td>repeated</td>
+<td>A set of properties that must all be matched to identify the board</td>
+</tr>
+</tbody>
+</table>
+<p><a name="cc.arduino.cli.commands.v1.BoardIdentificationProperties.PropertiesEntry"></a></p>
+<h3 id="boardidentificationpropertiespropertiesentry">BoardIdentificationProperties.PropertiesEntry<a class="headerlink" href="#boardidentificationpropertiespropertiesentry" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>key</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>value</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -3265,18 +4001,6 @@
 <td>If the board is marked as &#34;hidden&#34; in the platform</td>
 </tr>
 <tr>
-<td>vid</td>
-<td><a href="#string">string</a></td>
-<td></td>
-<td>Vendor ID</td>
-</tr>
-<tr>
-<td>pid</td>
-<td><a href="#string">string</a></td>
-<td></td>
-<td>Product ID</td>
-</tr>
-<tr>
 <td>platform</td>
 <td><a href="#cc.arduino.cli.commands.v1.Platform">Platform</a></td>
 <td></td>
@@ -3301,6 +4025,12 @@
 <td><a href="#cc.arduino.cli.commands.v1.Instance">Instance</a></td>
 <td></td>
 <td>Arduino Core Service instance from the <code>Init</code> response.</td>
+</tr>
+<tr>
+<td>timeout</td>
+<td><a href="#int64">int64</a></td>
+<td></td>
+<td>Search for boards for the given time (in milliseconds)</td>
 </tr>
 </tbody>
 </table>
@@ -3404,7 +4134,7 @@
 <td>category</td>
 <td><a href="#string">string</a></td>
 <td></td>
-<td>Category of the platform. Set to <code>Contributed</code> for 3<sup>rd</sup> party platforms.</td>
+<td>Category of the platform. Set to <code>Contributed</code> for 3rd party platforms.</td>
 </tr>
 <tr>
 <td>url</td>
@@ -3567,34 +4297,16 @@
 </thead>
 <tbody>
 <tr>
-<td>address</td>
-<td><a href="#string">string</a></td>
-<td></td>
-<td>Address of the port (e.g., <code>serial:///dev/ttyACM0</code>).</td>
-</tr>
-<tr>
-<td>protocol</td>
-<td><a href="#string">string</a></td>
-<td></td>
-<td>Protocol of the port (e.g., <code>serial</code>).</td>
-</tr>
-<tr>
-<td>protocol_label</td>
-<td><a href="#string">string</a></td>
-<td></td>
-<td>A human friendly description of the protocol (e.g., &#34;Serial Port (USB)&#34;).</td>
-</tr>
-<tr>
-<td>boards</td>
+<td>matching_boards</td>
 <td><a href="#cc.arduino.cli.commands.v1.BoardListItem">BoardListItem</a></td>
 <td>repeated</td>
-<td>The boards attached to the port.</td>
+<td>The possible boards attached to the port.</td>
 </tr>
 <tr>
-<td>serial_number</td>
-<td><a href="#string">string</a></td>
+<td>port</td>
+<td><a href="#cc.arduino.cli.commands.v1.Port">Port</a></td>
 <td></td>
-<td>Serial number of connected board</td>
+<td>The port details</td>
 </tr>
 </tbody>
 </table>
@@ -3615,26 +4327,6 @@
 <td><a href="#string">string</a></td>
 <td></td>
 <td>URL for getting online help.</td>
-</tr>
-</tbody>
-</table>
-<p><a name="cc.arduino.cli.commands.v1.IdentificationPref"></a></p>
-<h3 id="identificationpref">IdentificationPref<a class="headerlink" href="#identificationpref" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Type</th>
-<th>Label</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>usb_id</td>
-<td><a href="#cc.arduino.cli.commands.v1.USBID">USBID</a></td>
-<td></td>
-<td>Identifying information for USB-connected boards.</td>
 </tr>
 </tbody>
 </table>
@@ -3770,32 +4462,6 @@
 </tr>
 </tbody>
 </table>
-<p><a name="cc.arduino.cli.commands.v1.USBID"></a></p>
-<h3 id="usbid">USBID<a class="headerlink" href="#usbid" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Type</th>
-<th>Label</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>vid</td>
-<td><a href="#string">string</a></td>
-<td></td>
-<td>USB vendor ID.</td>
-</tr>
-<tr>
-<td>pid</td>
-<td><a href="#string">string</a></td>
-<td></td>
-<td>USB product ID.</td>
-</tr>
-</tbody>
-</table>
 <p><a name="cc/arduino/cli/commands/v1/commands.proto"></a></p>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -3834,6 +4500,28 @@
 </table>
 <p><a name="cc.arduino.cli.commands.v1.ArchiveSketchResponse"></a></p>
 <h3 id="archivesketchresponse">ArchiveSketchResponse<a class="headerlink" href="#archivesketchresponse" title="Permanent link">&para;</a></h3>
+<p><a name="cc.arduino.cli.commands.v1.CreateRequest"></a></p>
+<h3 id="createrequest">CreateRequest<a class="headerlink" href="#createrequest" title="Permanent link">&para;</a></h3>
+<p><a name="cc.arduino.cli.commands.v1.CreateResponse"></a></p>
+<h3 id="createresponse">CreateResponse<a class="headerlink" href="#createresponse" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>instance</td>
+<td><a href="#cc.arduino.cli.commands.v1.Instance">Instance</a></td>
+<td></td>
+<td>An Arduino Core instance.</td>
+</tr>
+</tbody>
+</table>
 <p><a name="cc.arduino.cli.commands.v1.DestroyRequest"></a></p>
 <h3 id="destroyrequest">DestroyRequest<a class="headerlink" href="#destroyrequest" title="Permanent link">&para;</a></h3>
 <table>
@@ -3856,6 +4544,38 @@
 </table>
 <p><a name="cc.arduino.cli.commands.v1.DestroyResponse"></a></p>
 <h3 id="destroyresponse">DestroyResponse<a class="headerlink" href="#destroyresponse" title="Permanent link">&para;</a></h3>
+<p><a name="cc.arduino.cli.commands.v1.DownloadResult"></a></p>
+<h3 id="downloadresult">DownloadResult<a class="headerlink" href="#downloadresult" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>url</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>Index URL.</td>
+</tr>
+<tr>
+<td>successful</td>
+<td><a href="#bool">bool</a></td>
+<td></td>
+<td>Download result: true if successful, false if an error occurred.</td>
+</tr>
+<tr>
+<td>error</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>Download error details.</td>
+</tr>
+</tbody>
+</table>
 <p><a name="cc.arduino.cli.commands.v1.InitRequest"></a></p>
 <h3 id="initrequest">InitRequest<a class="headerlink" href="#initrequest" title="Permanent link">&para;</a></h3>
 <table>
@@ -3869,10 +4589,22 @@
 </thead>
 <tbody>
 <tr>
-<td>library_manager_only</td>
-<td><a href="#bool">bool</a></td>
+<td>instance</td>
+<td><a href="#cc.arduino.cli.commands.v1.Instance">Instance</a></td>
 <td></td>
-<td>Start a Arduino Core Service instance that will provide only Library Manager functionality.</td>
+<td>An Arduino Core instance.</td>
+</tr>
+<tr>
+<td>profile</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>Profile to use</td>
+</tr>
+<tr>
+<td>sketch_path</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>The path where the sketch is stored</td>
 </tr>
 </tbody>
 </table>
@@ -3889,23 +4621,37 @@
 </thead>
 <tbody>
 <tr>
-<td>instance</td>
-<td><a href="#cc.arduino.cli.commands.v1.Instance">Instance</a></td>
+<td>init_progress</td>
+<td><a href="#cc.arduino.cli.commands.v1.InitResponse.Progress">InitResponse.Progress</a></td>
 <td></td>
-<td>An Arduino Core Service instance.</td>
+<td></td>
 </tr>
 <tr>
-<td>platforms_index_errors</td>
-<td><a href="#string">string</a></td>
-<td>repeated</td>
-<td>Error messages related to any problems encountered while parsing the platforms index files.</td>
+<td>error</td>
+<td><a href="#google.rpc.Status">google.rpc.Status</a></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
-<td>libraries_index_error</td>
-<td><a href="#string">string</a></td>
+<td>profile</td>
+<td><a href="#cc.arduino.cli.commands.v1.Profile">Profile</a></td>
 <td></td>
-<td>Error message if a problem was encountered while parsing the libraries index file.</td>
+<td>Selected profile information</td>
 </tr>
+</tbody>
+</table>
+<p><a name="cc.arduino.cli.commands.v1.InitResponse.Progress"></a></p>
+<h3 id="initresponseprogress">InitResponse.Progress<a class="headerlink" href="#initresponseprogress" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td>download_progress</td>
 <td><a href="#cc.arduino.cli.commands.v1.DownloadProgress">DownloadProgress</a></td>
@@ -3990,6 +4736,58 @@
 </tr>
 </tbody>
 </table>
+<p><a name="cc.arduino.cli.commands.v1.NewSketchRequest"></a></p>
+<h3 id="newsketchrequest">NewSketchRequest<a class="headerlink" href="#newsketchrequest" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>instance</td>
+<td><a href="#cc.arduino.cli.commands.v1.Instance">Instance</a></td>
+<td></td>
+<td>Arduino Core Service instance from the Init response.</td>
+</tr>
+<tr>
+<td>sketch_name</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>New sketch name</td>
+</tr>
+<tr>
+<td>sketch_dir</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>Optional: create a Sketch in this directory (used as &#34;Sketchbook&#34; directory). Default Sketchbook directory &#34;directories.User&#34; is used if sketch_dir is empty.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="cc.arduino.cli.commands.v1.NewSketchResponse"></a></p>
+<h3 id="newsketchresponse">NewSketchResponse<a class="headerlink" href="#newsketchresponse" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>main_file</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>Absolute path to a main sketch file</td>
+</tr>
+</tbody>
+</table>
 <p><a name="cc.arduino.cli.commands.v1.OutdatedRequest"></a></p>
 <h3 id="outdatedrequest">OutdatedRequest<a class="headerlink" href="#outdatedrequest" title="Permanent link">&para;</a></h3>
 <table>
@@ -4033,52 +4831,6 @@
 <td><a href="#cc.arduino.cli.commands.v1.Platform">Platform</a></td>
 <td>repeated</td>
 <td>List of installed cores that can be updated.</td>
-</tr>
-</tbody>
-</table>
-<p><a name="cc.arduino.cli.commands.v1.RescanRequest"></a></p>
-<h3 id="rescanrequest">RescanRequest<a class="headerlink" href="#rescanrequest" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Type</th>
-<th>Label</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>instance</td>
-<td><a href="#cc.arduino.cli.commands.v1.Instance">Instance</a></td>
-<td></td>
-<td>Arduino Core Service instance from the Init response.</td>
-</tr>
-</tbody>
-</table>
-<p><a name="cc.arduino.cli.commands.v1.RescanResponse"></a></p>
-<h3 id="rescanresponse">RescanResponse<a class="headerlink" href="#rescanresponse" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Type</th>
-<th>Label</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>platforms_index_errors</td>
-<td><a href="#string">string</a></td>
-<td>repeated</td>
-<td>Error messages related to any problems encountered while parsing the platforms index file.</td>
-</tr>
-<tr>
-<td>libraries_index_error</td>
-<td><a href="#string">string</a></td>
-<td></td>
-<td>Error message if a problem was encountered while parsing the libraries index file.</td>
 </tr>
 </tbody>
 </table>
@@ -4140,6 +4892,12 @@
 <td></td>
 <td>Arduino Core Service instance from the Init response.</td>
 </tr>
+<tr>
+<td>ignore_custom_package_indexes</td>
+<td><a href="#bool">bool</a></td>
+<td></td>
+<td>If set to true user defined package indexes will not be updated.</td>
+</tr>
 </tbody>
 </table>
 <p><a name="cc.arduino.cli.commands.v1.UpdateIndexResponse"></a></p>
@@ -4159,6 +4917,12 @@
 <td><a href="#cc.arduino.cli.commands.v1.DownloadProgress">DownloadProgress</a></td>
 <td></td>
 <td>Progress of the platforms index download.</td>
+</tr>
+<tr>
+<td>download_result</td>
+<td><a href="#cc.arduino.cli.commands.v1.DownloadResult">DownloadResult</a></td>
+<td></td>
+<td>Report of the index update downloads.</td>
 </tr>
 </tbody>
 </table>
@@ -4291,22 +5055,22 @@
 </thead>
 <tbody>
 <tr>
+<td>Create</td>
+<td><a href="#cc.arduino.cli.commands.v1.CreateRequest">CreateRequest</a></td>
+<td><a href="#cc.arduino.cli.commands.v1.CreateResponse">CreateResponse</a></td>
+<td>Create a new Arduino Core instance</td>
+</tr>
+<tr>
 <td>Init</td>
 <td><a href="#cc.arduino.cli.commands.v1.InitRequest">InitRequest</a></td>
 <td><a href="#cc.arduino.cli.commands.v1.InitResponse">InitResponse</a> stream</td>
-<td>Start a new instance of the Arduino Core Service</td>
+<td>Initializes an existing Arduino Core instance by loading platforms and libraries</td>
 </tr>
 <tr>
 <td>Destroy</td>
 <td><a href="#cc.arduino.cli.commands.v1.DestroyRequest">DestroyRequest</a></td>
 <td><a href="#cc.arduino.cli.commands.v1.DestroyResponse">DestroyResponse</a></td>
 <td>Destroy an instance of the Arduino Core Service</td>
-</tr>
-<tr>
-<td>Rescan</td>
-<td><a href="#cc.arduino.cli.commands.v1.RescanRequest">RescanRequest</a></td>
-<td><a href="#cc.arduino.cli.commands.v1.RescanResponse">RescanResponse</a></td>
-<td>Rescan instance of the Arduino Core Service</td>
 </tr>
 <tr>
 <td>UpdateIndex</td>
@@ -4343,6 +5107,12 @@
 <td><a href="#cc.arduino.cli.commands.v1.VersionRequest">VersionRequest</a></td>
 <td><a href="#cc.arduino.cli.commands.v1.VersionResponse">VersionResponse</a></td>
 <td>Get the version of Arduino CLI in use.</td>
+</tr>
+<tr>
+<td>NewSketch</td>
+<td><a href="#cc.arduino.cli.commands.v1.NewSketchRequest">NewSketchRequest</a></td>
+<td><a href="#cc.arduino.cli.commands.v1.NewSketchResponse">NewSketchResponse</a></td>
+<td>Create a new Sketch</td>
 </tr>
 <tr>
 <td>LoadSketch</td>
@@ -4435,6 +5205,12 @@
 <td>Upload a compiled sketch to a board using a programmer.</td>
 </tr>
 <tr>
+<td>SupportedUserFields</td>
+<td><a href="#cc.arduino.cli.commands.v1.SupportedUserFieldsRequest">SupportedUserFieldsRequest</a></td>
+<td><a href="#cc.arduino.cli.commands.v1.SupportedUserFieldsResponse">SupportedUserFieldsResponse</a></td>
+<td>Returns the list of users fields necessary to upload to that board using the specified protocol.</td>
+</tr>
+<tr>
 <td>ListProgrammersAvailableForUpload</td>
 <td><a href="#cc.arduino.cli.commands.v1.ListProgrammersAvailableForUploadRequest">ListProgrammersAvailableForUploadRequest</a></td>
 <td><a href="#cc.arduino.cli.commands.v1.ListProgrammersAvailableForUploadResponse">ListProgrammersAvailableForUploadResponse</a></td>
@@ -4469,6 +5245,12 @@
 <td><a href="#cc.arduino.cli.commands.v1.LibraryInstallRequest">LibraryInstallRequest</a></td>
 <td><a href="#cc.arduino.cli.commands.v1.LibraryInstallResponse">LibraryInstallResponse</a> stream</td>
 <td>Download and install an Arduino library from the libraries index.</td>
+</tr>
+<tr>
+<td>LibraryUpgrade</td>
+<td><a href="#cc.arduino.cli.commands.v1.LibraryUpgradeRequest">LibraryUpgradeRequest</a></td>
+<td><a href="#cc.arduino.cli.commands.v1.LibraryUpgradeResponse">LibraryUpgradeResponse</a> stream</td>
+<td>Upgrade a library to the newest version available.</td>
 </tr>
 <tr>
 <td>ZipLibraryInstall</td>
@@ -4511,6 +5293,18 @@
 <td><a href="#cc.arduino.cli.commands.v1.LibraryListRequest">LibraryListRequest</a></td>
 <td><a href="#cc.arduino.cli.commands.v1.LibraryListResponse">LibraryListResponse</a></td>
 <td>List the installed libraries.</td>
+</tr>
+<tr>
+<td>Monitor</td>
+<td><a href="#cc.arduino.cli.commands.v1.MonitorRequest">MonitorRequest</a> stream</td>
+<td><a href="#cc.arduino.cli.commands.v1.MonitorResponse">MonitorResponse</a> stream</td>
+<td>Open a monitor connection to a board port</td>
+</tr>
+<tr>
+<td>EnumerateMonitorPortSettings</td>
+<td><a href="#cc.arduino.cli.commands.v1.EnumerateMonitorPortSettingsRequest">EnumerateMonitorPortSettingsRequest</a></td>
+<td><a href="#cc.arduino.cli.commands.v1.EnumerateMonitorPortSettingsResponse">EnumerateMonitorPortSettingsResponse</a></td>
+<td>Returns the parameters that can be set in the MonitorRequest calls</td>
 </tr>
 </tbody>
 </table>
@@ -4585,6 +5379,44 @@
 <td><a href="#bool">bool</a></td>
 <td></td>
 <td>Whether the download is complete.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="cc.arduino.cli.commands.v1.InstalledPlatformReference"></a></p>
+<h3 id="installedplatformreference">InstalledPlatformReference<a class="headerlink" href="#installedplatformreference" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>Platform ID (e.g., <code>arduino:avr</code>).</td>
+</tr>
+<tr>
+<td>version</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>Version of the platform.</td>
+</tr>
+<tr>
+<td>install_dir</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>Installation directory of the platform</td>
+</tr>
+<tr>
+<td>package_url</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>3rd party platform URL</td>
 </tr>
 </tbody>
 </table>
@@ -4674,6 +5506,44 @@
 <td></td>
 <td>If true this Platform has been installed manually in the user&#39; sketchbook hardware folder</td>
 </tr>
+<tr>
+<td>deprecated</td>
+<td><a href="#bool">bool</a></td>
+<td></td>
+<td>If true this Platform has been deprecated</td>
+</tr>
+<tr>
+<td>type</td>
+<td><a href="#string">string</a></td>
+<td>repeated</td>
+<td>Type of the platform.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="cc.arduino.cli.commands.v1.Profile"></a></p>
+<h3 id="profile">Profile<a class="headerlink" href="#profile" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>Name used to identify the profile within the sketch.</td>
+</tr>
+<tr>
+<td>fqbn</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>FQBN specified in the profile.</td>
+</tr>
 </tbody>
 </table>
 <p><a name="cc.arduino.cli.commands.v1.Programmer"></a></p>
@@ -4737,6 +5607,12 @@
 <td><a href="#bool">bool</a></td>
 <td></td>
 <td>Whether the task is complete.</td>
+</tr>
+<tr>
+<td>percent</td>
+<td><a href="#float">float</a></td>
+<td></td>
+<td>Amount in percent of the task completion (optional)</td>
 </tr>
 </tbody>
 </table>
@@ -4838,7 +5714,7 @@
 <td>libraries</td>
 <td><a href="#string">string</a></td>
 <td>repeated</td>
-<td>List of custom libraries dir paths.</td>
+<td>A list of paths to directories containing a collection of libraries.</td>
 </tr>
 <tr>
 <td>optimize_for_debug</td>
@@ -4880,7 +5756,31 @@
 <td>library</td>
 <td><a href="#string">string</a></td>
 <td>repeated</td>
-<td>List of paths to library root folders</td>
+<td>A list of paths to single libraries root directory.</td>
+</tr>
+<tr>
+<td>keys_keychain</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>The path where to search for the custom signing key name and the encrypt key name</td>
+</tr>
+<tr>
+<td>sign_key</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>The name of the custom key to use for signing during the compile process</td>
+</tr>
+<tr>
+<td>encrypt_key</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>The name of the custom key to use for encrypting during the compile process</td>
+</tr>
+<tr>
+<td>skip_libraries_discovery</td>
+<td><a href="#bool">bool</a></td>
+<td></td>
+<td>If set to true the build will skip the library discovery process and will use the same libraries of latest build. Enabling this flag may produce a wrong output and should not be used in regular compiles unless there is a very specific reason to do so. This flag is mainly provided for usage in language servers to optimize the build speed in some particular cases.</td>
 </tr>
 </tbody>
 </table>
@@ -4926,13 +5826,13 @@
 <td>out_stream</td>
 <td><a href="#bytes">bytes</a></td>
 <td></td>
-<td>The output of the compilation process.</td>
+<td>The output of the compilation process (stream)</td>
 </tr>
 <tr>
 <td>err_stream</td>
 <td><a href="#bytes">bytes</a></td>
 <td></td>
-<td>The error output of the compilation process.</td>
+<td>The error output of the compilation process (stream)</td>
 </tr>
 <tr>
 <td>build_path</td>
@@ -4951,6 +5851,24 @@
 <td><a href="#cc.arduino.cli.commands.v1.ExecutableSectionSize">ExecutableSectionSize</a></td>
 <td>repeated</td>
 <td>The size of the executable split by sections</td>
+</tr>
+<tr>
+<td>board_platform</td>
+<td><a href="#cc.arduino.cli.commands.v1.InstalledPlatformReference">InstalledPlatformReference</a></td>
+<td></td>
+<td>The platform where the board is defined</td>
+</tr>
+<tr>
+<td>build_platform</td>
+<td><a href="#cc.arduino.cli.commands.v1.InstalledPlatformReference">InstalledPlatformReference</a></td>
+<td></td>
+<td>The platform used for the build (if referenced from the board platform)</td>
+</tr>
+<tr>
+<td>progress</td>
+<td><a href="#cc.arduino.cli.commands.v1.TaskProgress">TaskProgress</a></td>
+<td></td>
+<td>Completions reports of the compilation process (stream)</td>
 </tr>
 </tbody>
 </table>
@@ -4990,6 +5908,9 @@
 <p align="right"><a href="#top">Top</a></p>
 
 <h2 id="ccarduinoclicommandsv1coreproto">cc/arduino/cli/commands/v1/core.proto<a class="headerlink" href="#ccarduinoclicommandsv1coreproto" title="Permanent link">&para;</a></h2>
+<p><a name="cc.arduino.cli.commands.v1.AlreadyAtLatestVersionError"></a></p>
+<h3 id="alreadyatlatestversionerror">AlreadyAtLatestVersionError<a class="headerlink" href="#alreadyatlatestversionerror" title="Permanent link">&para;</a></h3>
+<p>AlreadyAtLatestVersionError is returned when an upgrade is not possible because already at latest version.</p>
 <p><a name="cc.arduino.cli.commands.v1.PlatformDownloadRequest"></a></p>
 <h3 id="platformdownloadrequest">PlatformDownloadRequest<a class="headerlink" href="#platformdownloadrequest" title="Permanent link">&para;</a></h3>
 <table>
@@ -5089,6 +6010,12 @@
 <td><a href="#bool">bool</a></td>
 <td></td>
 <td>Set to true to not run (eventual) post install scripts for trusted platforms</td>
+</tr>
+<tr>
+<td>no_overwrite</td>
+<td><a href="#bool">bool</a></td>
+<td></td>
+<td>Set to true to skip installation if a different version of the platform is already installed.</td>
 </tr>
 </tbody>
 </table>
@@ -5832,6 +6759,18 @@
 <td></td>
 <td>Set to true to skip installation of specified library&#39;s dependencies, defaults to false.</td>
 </tr>
+<tr>
+<td>no_overwrite</td>
+<td><a href="#bool">bool</a></td>
+<td></td>
+<td>Set to true to skip installation if a different version of the library or one of its dependencies is already installed, defaults to false.</td>
+</tr>
+<tr>
+<td>install_location</td>
+<td><a href="#cc.arduino.cli.commands.v1.LibraryInstallLocation">LibraryInstallLocation</a></td>
+<td></td>
+<td>Install the library and dependencies in the specified location</td>
+</tr>
 </tbody>
 </table>
 <p><a name="cc.arduino.cli.commands.v1.LibraryInstallResponse"></a></p>
@@ -6218,6 +7157,64 @@
 </tr>
 </tbody>
 </table>
+<p><a name="cc.arduino.cli.commands.v1.LibraryUpgradeRequest"></a></p>
+<h3 id="libraryupgraderequest">LibraryUpgradeRequest<a class="headerlink" href="#libraryupgraderequest" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>instance</td>
+<td><a href="#cc.arduino.cli.commands.v1.Instance">Instance</a></td>
+<td></td>
+<td>Arduino Core Service instance from the <code>Init</code> response.</td>
+</tr>
+<tr>
+<td>name</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>Name of the library.</td>
+</tr>
+<tr>
+<td>no_deps</td>
+<td><a href="#bool">bool</a></td>
+<td></td>
+<td>Set to true to skip installation of specified library&#39;s dependencies, defaults to false.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="cc.arduino.cli.commands.v1.LibraryUpgradeResponse"></a></p>
+<h3 id="libraryupgraderesponse">LibraryUpgradeResponse<a class="headerlink" href="#libraryupgraderesponse" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>progress</td>
+<td><a href="#cc.arduino.cli.commands.v1.DownloadProgress">DownloadProgress</a></td>
+<td></td>
+<td>Progress of the library download.</td>
+</tr>
+<tr>
+<td>task_progress</td>
+<td><a href="#cc.arduino.cli.commands.v1.TaskProgress">TaskProgress</a></td>
+<td></td>
+<td>Description of the current stage of the installation.</td>
+</tr>
+</tbody>
+</table>
 <p><a name="cc.arduino.cli.commands.v1.SearchedLibrary"></a></p>
 <h3 id="searchedlibrary">SearchedLibrary<a class="headerlink" href="#searchedlibrary" title="Permanent link">&para;</a></h3>
 <table>
@@ -6328,6 +7325,29 @@
 </tr>
 </tbody>
 </table>
+<p><a name="cc.arduino.cli.commands.v1.LibraryInstallLocation"></a></p>
+<h3 id="libraryinstalllocation">LibraryInstallLocation<a class="headerlink" href="#libraryinstalllocation" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Number</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LIBRARY_INSTALL_LOCATION_USER</td>
+<td>0</td>
+<td>In the <code>libraries</code> subdirectory of the user directory (sketchbook). This is the default if not specified.</td>
+</tr>
+<tr>
+<td>LIBRARY_INSTALL_LOCATION_BUILTIN</td>
+<td>1</td>
+<td>In the configured &#39;builtin.libraries&#39; directory.</td>
+</tr>
+</tbody>
+</table>
 <p><a name="cc.arduino.cli.commands.v1.LibraryLayout"></a></p>
 <h3 id="librarylayout">LibraryLayout<a class="headerlink" href="#librarylayout" title="Permanent link">&para;</a></h3>
 <table>
@@ -6363,9 +7383,9 @@
 </thead>
 <tbody>
 <tr>
-<td>LIBRARY_LOCATION_IDE_BUILTIN</td>
+<td>LIBRARY_LOCATION_BUILTIN</td>
 <td>0</td>
-<td>In the <code>libraries</code> subdirectory of the Arduino IDE installation.</td>
+<td>In the configured &#39;builtin.libraries&#39; directory.</td>
 </tr>
 <tr>
 <td>LIBRARY_LOCATION_USER</td>
@@ -6412,6 +7432,309 @@
 </tr>
 </tbody>
 </table>
+<p><a name="cc/arduino/cli/commands/v1/monitor.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+
+<h2 id="ccarduinoclicommandsv1monitorproto">cc/arduino/cli/commands/v1/monitor.proto<a class="headerlink" href="#ccarduinoclicommandsv1monitorproto" title="Permanent link">&para;</a></h2>
+<p><a name="cc.arduino.cli.commands.v1.EnumerateMonitorPortSettingsRequest"></a></p>
+<h3 id="enumeratemonitorportsettingsrequest">EnumerateMonitorPortSettingsRequest<a class="headerlink" href="#enumeratemonitorportsettingsrequest" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>instance</td>
+<td><a href="#cc.arduino.cli.commands.v1.Instance">Instance</a></td>
+<td></td>
+<td>Arduino Core Service instance from the <code>Init</code> response.</td>
+</tr>
+<tr>
+<td>port_protocol</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>The port protocol to enumerate settings.</td>
+</tr>
+<tr>
+<td>fqbn</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>The board FQBN we are trying to connect to. This is optional, and it&#39;s needed to disambiguate if more than one platform provides the pluggable monitor for a given port protocol.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="cc.arduino.cli.commands.v1.EnumerateMonitorPortSettingsResponse"></a></p>
+<h3 id="enumeratemonitorportsettingsresponse">EnumerateMonitorPortSettingsResponse<a class="headerlink" href="#enumeratemonitorportsettingsresponse" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>settings</td>
+<td><a href="#cc.arduino.cli.commands.v1.MonitorPortSettingDescriptor">MonitorPortSettingDescriptor</a></td>
+<td>repeated</td>
+<td>A list of descriptors of the settings that may be changed for the monitor port.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="cc.arduino.cli.commands.v1.MonitorPortConfiguration"></a></p>
+<h3 id="monitorportconfiguration">MonitorPortConfiguration<a class="headerlink" href="#monitorportconfiguration" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>settings</td>
+<td><a href="#cc.arduino.cli.commands.v1.MonitorPortSetting">MonitorPortSetting</a></td>
+<td>repeated</td>
+<td>The port configuration parameters to configure</td>
+</tr>
+</tbody>
+</table>
+<p><a name="cc.arduino.cli.commands.v1.MonitorPortSetting"></a></p>
+<h3 id="monitorportsetting">MonitorPortSetting<a class="headerlink" href="#monitorportsetting" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>setting_id</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>value</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><a name="cc.arduino.cli.commands.v1.MonitorPortSettingDescriptor"></a></p>
+<h3 id="monitorportsettingdescriptor">MonitorPortSettingDescriptor<a class="headerlink" href="#monitorportsettingdescriptor" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>setting_id</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>The setting identifier</td>
+</tr>
+<tr>
+<td>label</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>A human-readable label of the setting (to be displayed on the GUI)</td>
+</tr>
+<tr>
+<td>type</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>The setting type (at the moment only &#34;enum&#34; is avaiable)</td>
+</tr>
+<tr>
+<td>enum_values</td>
+<td><a href="#string">string</a></td>
+<td>repeated</td>
+<td>The values allowed on &#34;enum&#34; types</td>
+</tr>
+<tr>
+<td>value</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>The selected or default value</td>
+</tr>
+</tbody>
+</table>
+<p><a name="cc.arduino.cli.commands.v1.MonitorRequest"></a></p>
+<h3 id="monitorrequest">MonitorRequest<a class="headerlink" href="#monitorrequest" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>instance</td>
+<td><a href="#cc.arduino.cli.commands.v1.Instance">Instance</a></td>
+<td></td>
+<td>Arduino Core Service instance from the <code>Init</code> response.</td>
+</tr>
+<tr>
+<td>port</td>
+<td><a href="#cc.arduino.cli.commands.v1.Port">Port</a></td>
+<td></td>
+<td>Port to open, must be filled only on the first request</td>
+</tr>
+<tr>
+<td>fqbn</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>The board FQBN we are trying to connect to. This is optional, and it&#39;s needed to disambiguate if more than one platform provides the pluggable monitor for a given port protocol.</td>
+</tr>
+<tr>
+<td>tx_data</td>
+<td><a href="#bytes">bytes</a></td>
+<td></td>
+<td>Data to send to the port</td>
+</tr>
+<tr>
+<td>port_configuration</td>
+<td><a href="#cc.arduino.cli.commands.v1.MonitorPortConfiguration">MonitorPortConfiguration</a></td>
+<td></td>
+<td>Port configuration, optional, contains settings of the port to be applied</td>
+</tr>
+</tbody>
+</table>
+<p><a name="cc.arduino.cli.commands.v1.MonitorResponse"></a></p>
+<h3 id="monitorresponse">MonitorResponse<a class="headerlink" href="#monitorresponse" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>error</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>Eventual errors dealing with monitor port</td>
+</tr>
+<tr>
+<td>rx_data</td>
+<td><a href="#bytes">bytes</a></td>
+<td></td>
+<td>Data received from the port</td>
+</tr>
+<tr>
+<td>applied_settings</td>
+<td><a href="#cc.arduino.cli.commands.v1.MonitorPortSetting">MonitorPortSetting</a></td>
+<td>repeated</td>
+<td>Settings applied to the port, may be returned after a port is opened (to report the default settings) or after a new port_configuration is sent (to report the new settings applied)</td>
+</tr>
+<tr>
+<td>success</td>
+<td><a href="#bool">bool</a></td>
+<td></td>
+<td>A message with this field set to true is sent as soon as the port is succesfully opened</td>
+</tr>
+</tbody>
+</table>
+<p><a name="cc/arduino/cli/commands/v1/port.proto"></a></p>
+<p align="right"><a href="#top">Top</a></p>
+
+<h2 id="ccarduinoclicommandsv1portproto">cc/arduino/cli/commands/v1/port.proto<a class="headerlink" href="#ccarduinoclicommandsv1portproto" title="Permanent link">&para;</a></h2>
+<p><a name="cc.arduino.cli.commands.v1.Port"></a></p>
+<h3 id="port">Port<a class="headerlink" href="#port" title="Permanent link">&para;</a></h3>
+<p>Port represents a board port that may be used to upload or to monitor a board</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>address</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>Address of the port (e.g., <code>/dev/ttyACM0</code>).</td>
+</tr>
+<tr>
+<td>label</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>The port label to show on the GUI (e.g. &#34;ttyACM0&#34;)</td>
+</tr>
+<tr>
+<td>protocol</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>Protocol of the port (e.g., <code>serial</code>, <code>network</code>, ...).</td>
+</tr>
+<tr>
+<td>protocol_label</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>A human friendly description of the protocol (e.g., &#34;Serial Port (USB)&#34;).</td>
+</tr>
+<tr>
+<td>properties</td>
+<td><a href="#cc.arduino.cli.commands.v1.Port.PropertiesEntry">Port.PropertiesEntry</a></td>
+<td>repeated</td>
+<td>A set of properties of the port</td>
+</tr>
+</tbody>
+</table>
+<p><a name="cc.arduino.cli.commands.v1.Port.PropertiesEntry"></a></p>
+<h3 id="portpropertiesentry">Port.PropertiesEntry<a class="headerlink" href="#portpropertiesentry" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>key</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>value</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <p><a name="cc/arduino/cli/commands/v1/upload.proto"></a></p>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -6442,7 +7765,7 @@
 </tr>
 <tr>
 <td>port</td>
-<td><a href="#string">string</a></td>
+<td><a href="#cc.arduino.cli.commands.v1.Port">Port</a></td>
 <td></td>
 <td>The port of the programmer used to program the bootloader.</td>
 </tr>
@@ -6463,6 +7786,44 @@
 <td><a href="#string">string</a></td>
 <td></td>
 <td>The programmer to use for burning bootloader.</td>
+</tr>
+<tr>
+<td>dry_run</td>
+<td><a href="#bool">bool</a></td>
+<td></td>
+<td>If set to true, the actual upload will not be performed but a trace output will be printed stdout. This is for debugging purposes.</td>
+</tr>
+<tr>
+<td>user_fields</td>
+<td><a href="#cc.arduino.cli.commands.v1.BurnBootloaderRequest.UserFieldsEntry">BurnBootloaderRequest.UserFieldsEntry</a></td>
+<td>repeated</td>
+<td>User provided fields usually used by upload tools that need authentication or in any case fields that can be customized by the user at upload time and cannot be known previously. For more info: <a href="https://arduino.github.io/arduino-cli/latest/platform-specification/#user-provided-fields">https://arduino.github.io/arduino-cli/latest/platform-specification/#user-provided-fields</a></td>
+</tr>
+</tbody>
+</table>
+<p><a name="cc.arduino.cli.commands.v1.BurnBootloaderRequest.UserFieldsEntry"></a></p>
+<h3 id="burnbootloaderrequestuserfieldsentry">BurnBootloaderRequest.UserFieldsEntry<a class="headerlink" href="#burnbootloaderrequestuserfieldsentry" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>key</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>value</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -6538,6 +7899,60 @@
 </tr>
 </tbody>
 </table>
+<p><a name="cc.arduino.cli.commands.v1.ProgrammerIsRequiredForUploadError"></a></p>
+<h3 id="programmerisrequiredforuploaderror">ProgrammerIsRequiredForUploadError<a class="headerlink" href="#programmerisrequiredforuploaderror" title="Permanent link">&para;</a></h3>
+<p><a name="cc.arduino.cli.commands.v1.SupportedUserFieldsRequest"></a></p>
+<h3 id="supporteduserfieldsrequest">SupportedUserFieldsRequest<a class="headerlink" href="#supporteduserfieldsrequest" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>instance</td>
+<td><a href="#cc.arduino.cli.commands.v1.Instance">Instance</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>fqbn</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>protocol</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>Protocol that will be used to upload, this information is necessary to pick the right upload tool for the board specified with the FQBN.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="cc.arduino.cli.commands.v1.SupportedUserFieldsResponse"></a></p>
+<h3 id="supporteduserfieldsresponse">SupportedUserFieldsResponse<a class="headerlink" href="#supporteduserfieldsresponse" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>user_fields</td>
+<td><a href="#cc.arduino.cli.commands.v1.UserField">UserField</a></td>
+<td>repeated</td>
+<td>User fields supported by board specified in SupportedUserFieldsRequest. If board doesn&#39;t support any field it will be empty.</td>
+</tr>
+</tbody>
+</table>
 <p><a name="cc.arduino.cli.commands.v1.UploadRequest"></a></p>
 <h3 id="uploadrequest">UploadRequest<a class="headerlink" href="#uploadrequest" title="Permanent link">&para;</a></h3>
 <table>
@@ -6570,7 +7985,7 @@
 </tr>
 <tr>
 <td>port</td>
-<td><a href="#string">string</a></td>
+<td><a href="#cc.arduino.cli.commands.v1.Port">Port</a></td>
 <td></td>
 <td>The port of the board.</td>
 </tr>
@@ -6603,6 +8018,44 @@
 <td><a href="#string">string</a></td>
 <td></td>
 <td>The programmer to use for upload. If set an UploadUsingProgrammer is triggered instead of a normal upload. The UploadUsingProgrammer call may also be used for explicit error check.</td>
+</tr>
+<tr>
+<td>dry_run</td>
+<td><a href="#bool">bool</a></td>
+<td></td>
+<td>If set to true, the actual upload will not be performed but a trace output will be printed stdout. This is for debugging purposes.</td>
+</tr>
+<tr>
+<td>user_fields</td>
+<td><a href="#cc.arduino.cli.commands.v1.UploadRequest.UserFieldsEntry">UploadRequest.UserFieldsEntry</a></td>
+<td>repeated</td>
+<td>User provided fields usually used by upload tools that need authentication or in any case fields that can be customized by the user at upload time and cannot be known previously. For more info: <a href="https://arduino.github.io/arduino-cli/latest/platform-specification/#user-provided-fields">https://arduino.github.io/arduino-cli/latest/platform-specification/#user-provided-fields</a></td>
+</tr>
+</tbody>
+</table>
+<p><a name="cc.arduino.cli.commands.v1.UploadRequest.UserFieldsEntry"></a></p>
+<h3 id="uploadrequestuserfieldsentry">UploadRequest.UserFieldsEntry<a class="headerlink" href="#uploadrequestuserfieldsentry" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>key</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>value</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -6664,7 +8117,7 @@
 </tr>
 <tr>
 <td>port</td>
-<td><a href="#string">string</a></td>
+<td><a href="#cc.arduino.cli.commands.v1.Port">Port</a></td>
 <td></td>
 <td>The port of the board.</td>
 </tr>
@@ -6698,6 +8151,44 @@
 <td></td>
 <td>The programmer to use for upload.</td>
 </tr>
+<tr>
+<td>dry_run</td>
+<td><a href="#bool">bool</a></td>
+<td></td>
+<td>If set to true, the actual upload will not be performed but a trace output will be printed stdout. This is for debugging purposes.</td>
+</tr>
+<tr>
+<td>user_fields</td>
+<td><a href="#cc.arduino.cli.commands.v1.UploadUsingProgrammerRequest.UserFieldsEntry">UploadUsingProgrammerRequest.UserFieldsEntry</a></td>
+<td>repeated</td>
+<td>User provided fields usually used by upload tools that need authentication or in any case fields that can be customized by the user at upload time and cannot be known previously. For more info: <a href="https://arduino.github.io/arduino-cli/latest/platform-specification/#user-provided-fields">https://arduino.github.io/arduino-cli/latest/platform-specification/#user-provided-fields</a></td>
+</tr>
+</tbody>
+</table>
+<p><a name="cc.arduino.cli.commands.v1.UploadUsingProgrammerRequest.UserFieldsEntry"></a></p>
+<h3 id="uploadusingprogrammerrequestuserfieldsentry">UploadUsingProgrammerRequest.UserFieldsEntry<a class="headerlink" href="#uploadusingprogrammerrequestuserfieldsentry" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>key</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>value</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td></td>
+</tr>
 </tbody>
 </table>
 <p><a name="cc.arduino.cli.commands.v1.UploadUsingProgrammerResponse"></a></p>
@@ -6723,6 +8214,44 @@
 <td><a href="#bytes">bytes</a></td>
 <td></td>
 <td>The error output of the upload process.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="cc.arduino.cli.commands.v1.UserField"></a></p>
+<h3 id="userfield">UserField<a class="headerlink" href="#userfield" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tool_id</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>Id of the tool that supports this field</td>
+</tr>
+<tr>
+<td>name</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>Name used internally to store and retrieve this field</td>
+</tr>
+<tr>
+<td>label</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>Label is the text shown to the user when they need to input this field</td>
+</tr>
+<tr>
+<td>secret</td>
+<td><a href="#bool">bool</a></td>
+<td></td>
+<td>True if the value of the field must not be shown when typing, for example when the user inputs a network password</td>
 </tr>
 </tbody>
 </table>
@@ -6910,9 +8439,6 @@
 </tbody>
 </table>
                 
-                  
-                
-                
               
               
                 
@@ -6922,45 +8448,46 @@
             </article>
           </div>
         </div>
+        
       </main>
       
         
 <footer class="md-footer">
   
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid">
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
         
-          <a href="../../commands/arduino-cli_version/" title="version" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
-            </div>
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Previous
-                </span>
-                version
+        <a href="../../commands/arduino-cli_version/" class="md-footer__link md-footer__link--prev" aria-label="Previous: version" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
               </span>
+              version
             </div>
-          </a>
+          </div>
+        </a>
+      
+      
         
-        
-          <a href="../monitor/" title="monitor" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                monitor
+        <a href="../settings/" class="md-footer__link md-footer__link--next" aria-label="Next: settings" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
               </span>
+              settings
             </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          </a>
-        
-      </nav>
-    </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -6970,11 +8497,13 @@
             Copyright 2020 ARDUINO SA (http://www.arduino.cc/)
           </div>
         
-        powered by
-        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
-        and
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-          Material for MkDocs</a>
+        
+          Made with
+          <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+            Material for MkDocs
+          </a>
+        
+        
       </div>
       
     </div>
@@ -6982,12 +8511,13 @@
 </footer>
       
     </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.fcfe8b6d.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
     
-      <script src="../../assets/javascripts/application.c33a9706.js"></script>
-      
-      <script>app.initialize({version:"1.1.2",url:{base:"../.."}})</script>
-      
-        <script src="../../js/version-select.js"></script>
+    
+      <script src="../../assets/javascripts/bundle.b1047164.min.js"></script>
       
     
   </body>
