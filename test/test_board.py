@@ -416,7 +416,7 @@ def test_board_list_with_invalid_discovery(run_command, data_dir):
     # (for example if the installation fails midway).
     # https://github.com/arduino/arduino-cli/issues/1669
     tool_dir = os.path.join(data_dir, "packages", "builtin", "tools", "serial-discovery")
-    for file_to_delete in glob.glob(tool_dir + "/*/*"):
+    for file_to_delete in glob.glob(f"{tool_dir}/*/*"):
         os.remove(file_to_delete)
 
     result = run_command(["board", "list"])
@@ -567,7 +567,7 @@ def test_board_search(run_command, data_dir):
     # Verifies boards are returned
     assert len(data) > 0
     # Verifies no board has FQBN set since no platform is installed
-    assert len([board["fqbn"] for board in data if "fqbn" in board]) == 0
+    assert not [board["fqbn"] for board in data if "fqbn" in board]
     names = [board["name"] for board in data if "name" in board]
     assert "Arduino Uno" in names
     assert "Arduino Yún" in names
@@ -582,7 +582,7 @@ def test_board_search(run_command, data_dir):
     # Verifies boards are returned
     assert len(data) > 0
     # Verifies no board has FQBN set since no platform is installed
-    assert len([board["fqbn"] for board in data if "fqbn" in board]) == 0
+    assert not [board["fqbn"] for board in data if "fqbn" in board]
     names = [board["name"] for board in data if "name" in board]
     assert "Arduino Nano 33 BLE" in names
     assert "Arduino Nano 33 IoT" in names

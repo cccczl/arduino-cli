@@ -447,12 +447,32 @@ def test_compile_with_fake_secure_boot_core(run_command, data_dir):
     )
 
     # Verifies compilation works with secure boot disabled
-    res = run_command(["compile", "--clean", "-b", fqbn + ":security=none", sketch_path, "-v"])
+    res = run_command(
+        [
+            "compile",
+            "--clean",
+            "-b",
+            f"{fqbn}:security=none",
+            sketch_path,
+            "-v",
+        ]
+    )
+
     assert res.ok
     assert "echo exit" in res.stdout
 
     # Verifies compilation works with secure boot enabled
-    res = run_command(["compile", "--clean", "-b", fqbn + ":security=sien", sketch_path, "-v"])
+    res = run_command(
+        [
+            "compile",
+            "--clean",
+            "-b",
+            f"{fqbn}:security=sien",
+            sketch_path,
+            "-v",
+        ]
+    )
+
     assert res.ok
     assert "Default_Keys/default-signing-key.pem" in res.stdout
     assert "Default_Keys/default-encrypt-key.pem" in res.stdout
@@ -463,13 +483,14 @@ def test_compile_with_fake_secure_boot_core(run_command, data_dir):
             "compile",
             "--clean",
             "-b",
-            fqbn + ":security=sien",
+            f"{fqbn}:security=sien",
             sketch_path,
             "--keys-keychain",
             data_dir,
             "-v",
         ]
     )
+
     assert res.failed
     assert "Flag --sign-key is mandatory when used in conjunction with flag --keys-keychain" in res.stderr
 
@@ -485,7 +506,7 @@ def test_compile_with_fake_secure_boot_core(run_command, data_dir):
             "compile",
             "--clean",
             "-b",
-            fqbn + ":security=sien",
+            f"{fqbn}:security=sien",
             sketch_path,
             "--keys-keychain",
             keys_dir,
@@ -496,6 +517,7 @@ def test_compile_with_fake_secure_boot_core(run_command, data_dir):
             "-v",
         ]
     )
+
     assert res.ok
     assert "my-sign-key.pem" in res.stdout
     assert "my-encrypt-key.pem" in res.stdout

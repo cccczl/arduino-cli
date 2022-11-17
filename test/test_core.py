@@ -165,13 +165,15 @@ def test_core_download(run_command, downloads_dir):
 
 def _in(jsondata, name, version=None):
     installed_cores = json.loads(jsondata)
-    for c in installed_cores:
-        if name == c.get("id"):
-            if version is None:
-                return True
-            elif version == c.get("installed"):
-                return True
-    return False
+    return any(
+        name == c.get("id")
+        and (
+            version is None
+            or version is not None
+            and version == c.get("installed")
+        )
+        for c in installed_cores
+    )
 
 
 def test_core_install(run_command):
@@ -273,10 +275,7 @@ def test_core_install_creates_installed_json(run_command, data_dir):
     def ordered(obj):
         if isinstance(obj, dict):
             return sorted({k: ordered(v) for k, v in obj.items()})
-        if isinstance(obj, list):
-            return sorted(ordered(x) for x in obj)
-        else:
-            return obj
+        return sorted(ordered(x) for x in obj) if isinstance(obj, list) else obj
 
     assert ordered(installed_json) == ordered(expected_installed_json)
 

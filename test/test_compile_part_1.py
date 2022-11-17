@@ -157,7 +157,7 @@ def test_compile_with_sketch_with_symlink_selfloop(run_command, data_dir):
     # Create a test sketch
     result = run_command(["sketch", "new", sketch_path])
     assert result.ok
-    assert "Sketch created in: {}".format(sketch_path) in result.stdout
+    assert f"Sketch created in: {sketch_path}" in result.stdout
 
     # create a symlink that loops on himself
     loop_file_path = os.path.join(sketch_path, "loop")
@@ -177,7 +177,7 @@ def test_compile_with_sketch_with_symlink_selfloop(run_command, data_dir):
     # Create a test sketch
     result = run_command(["sketch", "new", sketch_path])
     assert result.ok
-    assert "Sketch created in: {}".format(sketch_path) in result.stdout
+    assert f"Sketch created in: {sketch_path}" in result.stdout
 
     # create a symlink that loops on the upper level
     loop_dir_path = os.path.join(sketch_path, "loop_dir")
@@ -211,7 +211,7 @@ def test_compile_blacklisted_sketchname(run_command, data_dir):
     # Create a test sketch
     result = run_command(["sketch", "new", sketch_path])
     assert result.ok
-    assert "Sketch created in: {}".format(sketch_path) in result.stdout
+    assert f"Sketch created in: {sketch_path}" in result.stdout
 
     # Build sketch for arduino:avr:uno
     result = run_command(["compile", "-b", fqbn, sketch_path])

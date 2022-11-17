@@ -29,9 +29,8 @@ def test_init_with_existing_custom_config(run_command, data_dir, working_dir, do
     assert result.ok
     assert data_dir in result.stdout
 
-    config_file = open(Path(data_dir) / "arduino-cli.yaml", "r")
-    configs = yaml.load(config_file.read(), Loader=yaml.FullLoader)
-    config_file.close()
+    with open(Path(data_dir) / "arduino-cli.yaml", "r") as config_file:
+        configs = yaml.load(config_file.read(), Loader=yaml.FullLoader)
     assert ["https://example.com"] == configs["board_manager"]["additional_urls"]
     assert "50051" == configs["daemon"]["port"]
     assert data_dir == configs["directories"]["data"]
@@ -49,9 +48,8 @@ def test_init_with_existing_custom_config(run_command, data_dir, working_dir, do
     assert result.ok
     assert str(config_file_path) in result.stdout
 
-    config_file = open(config_file_path, "r")
-    configs = yaml.load(config_file.read(), Loader=yaml.FullLoader)
-    config_file.close()
+    with open(config_file_path, "r") as config_file:
+        configs = yaml.load(config_file.read(), Loader=yaml.FullLoader)
     assert [] == configs["board_manager"]["additional_urls"]
     assert "50051" == configs["daemon"]["port"]
     assert data_dir == configs["directories"]["data"]
@@ -69,9 +67,8 @@ def test_init_overwrite_existing_custom_file(run_command, data_dir, working_dir,
     assert result.ok
     assert data_dir in result.stdout
 
-    config_file = open(Path(data_dir) / "arduino-cli.yaml", "r")
-    configs = yaml.load(config_file.read(), Loader=yaml.FullLoader)
-    config_file.close()
+    with open(Path(data_dir) / "arduino-cli.yaml", "r") as config_file:
+        configs = yaml.load(config_file.read(), Loader=yaml.FullLoader)
     assert ["https://example.com"] == configs["board_manager"]["additional_urls"]
     assert "50051" == configs["daemon"]["port"]
     assert data_dir == configs["directories"]["data"]
@@ -87,9 +84,8 @@ def test_init_overwrite_existing_custom_file(run_command, data_dir, working_dir,
     assert result.ok
     assert data_dir in result.stdout
 
-    config_file = open(Path(data_dir) / "arduino-cli.yaml", "r")
-    configs = yaml.load(config_file.read(), Loader=yaml.FullLoader)
-    config_file.close()
+    with open(Path(data_dir) / "arduino-cli.yaml", "r") as config_file:
+        configs = yaml.load(config_file.read(), Loader=yaml.FullLoader)
     assert [] == configs["board_manager"]["additional_urls"]
     assert "50051" == configs["daemon"]["port"]
     assert data_dir == configs["directories"]["data"]

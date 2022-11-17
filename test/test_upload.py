@@ -129,7 +129,7 @@ def test_compile_and_upload_combo(run_command, data_dir, detected_boards, wait_f
     # Create a test sketch
     sketch_name = "CompileAndUploadIntegrationTest"
     sketch_path = os.path.join(data_dir, sketch_name)
-    sketch_main_file = os.path.join(sketch_path, sketch_name + ".ino")
+    sketch_main_file = os.path.join(sketch_path, f"{sketch_name}.ino")
     result = run_command(["sketch", "new", sketch_path])
     assert result.ok
     assert "Sketch created in: {}".format(sketch_path) in result.stdout

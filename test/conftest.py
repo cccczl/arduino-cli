@@ -84,7 +84,7 @@ def downloads_dir(tmpdir_factory, worker_id):
     # This folders should be created only once per session, if we're running
     # tests in parallel using multiple processes we need to make sure this
     # this fixture is executed only once, thus the use of the lockfile
-    if not worker_id == "master":
+    if worker_id != "master":
         lock = Path(download_dir / "lock")
         with FileLock(lock):
             if not lock.is_file():
@@ -217,9 +217,10 @@ def detected_boards(run_command):
                     package=package,
                     architecture=architecture,
                     id=_id,
-                    core="{}:{}".format(package, architecture),
+                    core=f"{package}:{architecture}",
                 )
             )
+
 
     return detected_boards
 
@@ -246,7 +247,7 @@ def wait_for_board(run_command):
         while time.time() < time_end:
             result = run_command(["board", "list", "--format", "json"])
             ports = json.loads(result.stdout)
-            if len([p.get("boards", []) for p in ports]) > 0:
+            if [p.get("boards", []) for p in ports]:
                 break
 
     return _waiter

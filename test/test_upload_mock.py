@@ -1226,10 +1226,7 @@ def test_upload_sketch(
     )
     assert res.ok
 
-    if isinstance(output, str):
-        out = output
-    else:
-        out = output[sys.platform]
+    out = output if isinstance(output, str) else output[sys.platform]
     expected_output = out.format(
         data_dir=session_data_dir,
         upload_port=upload_port,

@@ -377,16 +377,19 @@ def test_install_with_git_url_fragment_as_branch(run_command, data_dir, download
     git_url = "https://github.com/arduino-libraries/WiFi101.git"
 
     # Test that a bad ref fails
-    res = run_command(["lib", "install", "--git-url", git_url + "#x-ref-does-not-exist"])
+    res = run_command(
+        ["lib", "install", "--git-url", f"{git_url}#x-ref-does-not-exist"]
+    )
+
     assert res.failed
 
     # Verifies library is installed in expected path
-    res = run_command(["lib", "install", "--git-url", git_url + "#0.16.0"])
+    res = run_command(["lib", "install", "--git-url", f"{git_url}#0.16.0"])
     assert res.ok
     assert lib_install_dir.exists()
 
     # Reinstall library at an existing ref
-    assert run_command(["lib", "install", "--git-url", git_url + "#master"])
+    assert run_command(["lib", "install", "--git-url", f"{git_url}#master"])
     assert res.ok
 
     # Verifies library remains installed

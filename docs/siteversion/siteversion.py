@@ -61,7 +61,7 @@ def get_rel_branch_names(blist):
     for b in blist:
         res = pattern.search(b.name)
         if res is not None:
-            names.append(res.group(1))
+            names.append(res[1])
 
     # Since sorting is stable, first sort by major...
     names = sorted(names, key=lambda x: int(x.split(".")[0]), reverse=True)
